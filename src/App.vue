@@ -1,29 +1,57 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+    <v-app class="app">
+        <navigation-bar app @click:icon="clickIconHandler" />
+
+        <navigation-drawer app :drawer.sync="drawer" />
+
+        <v-content class="content">
+            <v-container fluid grid-list-lg>
+                <router-view />
+            </v-container>
+        </v-content>
+
+        <footer-bar app />
+    </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import NavigationBar from './components/NavigationBar.vue'
+import FooterBar from './components/FooterBar.vue'
+import NavigationDrawer from './components/NavigationDrawer.vue'
+
+export default {
+    name: 'App',
+    components: {
+        NavigationBar,
+        NavigationDrawer,
+        FooterBar
+    },
+    data: () => ({
+        drawer: false
+    }),
+    methods: {
+        clickIconHandler() {
+            this.drawer = !this.drawer
+        }
+    },
+    beforeCreate() {
+        this.$store.dispatch('loadReviews')
     }
-  }
+}
+</script>
+
+<style lang="scss" scoped>
+// .content {
+//     margin-top: 50px;
+// }
+</style>
+
+<style lang="scss">
+.section {
+    margin-bottom: 32px !important;
+
+    &--big {
+        margin-bottom: 64px !important;
+    }
 }
 </style>
