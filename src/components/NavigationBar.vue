@@ -37,40 +37,20 @@
                     </v-btn>
                 </template>
 
-                <v-list dense class="grey lighten-4">
-                    <v-list-item>
+                <v-list dense class="grey lighten-4 navigation__menu-list">
+                    <v-list-item
+                        v-for="(item, idx) in menu"
+                        :key="idx"
+                        class="navigation__menu-list-item"
+                    >
                         <v-btn
                             class="link link-menu"
                             text
                             large
-                            to="/included"
+                            :to="item.link"
                             active-class=""
                         >
-                            What is Included
-                        </v-btn>
-                    </v-list-item>
-
-                    <v-list-item>
-                        <v-btn
-                            class="link link-menu"
-                            text
-                            large
-                            to="/reviews"
-                            active-class=""
-                        >
-                            What People Say
-                        </v-btn>
-                    </v-list-item>
-
-                    <v-list-item>
-                        <v-btn
-                            class="link link-menu"
-                            text
-                            large
-                            to="/faqs"
-                            active-class=""
-                        >
-                            FAQs
+                            {{ item.title }}
                         </v-btn>
                     </v-list-item>
                 </v-list>
@@ -84,7 +64,21 @@ import Logo from '../assets/logo_main.png'
 
 export default {
     data: () => ({
-        logo: Logo
+        logo: Logo,
+        menu: [
+            {
+                title: 'What is Included',
+                link: '/included'
+            },
+            {
+                title: 'What People Say',
+                link: '/reviews'
+            },
+            {
+                title: 'FAQs',
+                link: '/faqs'
+            }
+        ]
     }),
     methods: {
         iconClickHandler() {
@@ -112,5 +106,15 @@ export default {
 
 .link-title:hover {
     color: $primary-color;
+}
+
+.navigation__menu-list {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navigation__menu-list-item {
+    padding-left: 0;
+    padding-right: 0;
 }
 </style>

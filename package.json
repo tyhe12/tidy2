@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "deploy": "NODE_ENV=development vue-cli-service s3-deploy",
-    "deploy:prod": "NODE_ENV=production vue-cli-service s3-deploy",
+    "deploy:prod": "NODE_ENV=production vue-cli-service s3-deploy"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
