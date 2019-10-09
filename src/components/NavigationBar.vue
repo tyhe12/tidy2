@@ -91,7 +91,7 @@ export default {
 <style lang="scss" scoped>
 .link:hover {
     &::before {
-        background: currentColor;
+        background: none;
     }
     color: $primary-color;
 }

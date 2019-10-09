@@ -1,13 +1,5 @@
 <template>
     <div class="reviews">
-        <v-alert
-            v-model="showAlert"
-            type="success"
-            transition="fade-transition"
-            dismissible
-        >
-            Your review has been submitted! We really appreciate your review!
-        </v-alert>
         <v-layout align-center justify-center row wrap>
             <v-flex xs12 class="d-flex justify-end">
                 <v-btn
@@ -32,6 +24,15 @@
                 ></review-form>
             </v-flex>
         </v-layout>
+        <v-snackbar
+            top
+            v-model="showAlert"
+            color="primary"
+            :timeout="timeout"
+            class="title review-form__snackbar"
+        >
+            Your review has been submitted! We really appreciate your review!
+        </v-snackbar>
     </div>
 </template>
 
@@ -46,6 +47,7 @@ export default {
         ReviewForm
     },
     data: () => ({
+        timeout: 5000,
         showAlert: false,
         target: '#review-form',
         options: {
@@ -67,5 +69,10 @@ export default {
 <style scoped lang="scss">
 .write-review-button {
     flex: none !important;
+}
+
+.review-form__snackbar {
+    padding-left: 32px;
+    padding-right: 32px;
 }
 </style>
