@@ -3,7 +3,7 @@
         <v-flex xs12>
             <v-tabs
                 v-model="active"
-                color="grey lighten-3"
+                background-color="transparent"
                 centered
                 grow
                 slider-color="pink lighten-3"
@@ -21,7 +21,7 @@
             </v-tabs>
         </v-flex>
 
-        <v-tabs-items v-model="active">
+        <v-tabs-items class="offerings__tabs-items" v-model="active">
             <v-tab-item v-for="(tab, index) in tabs" :key="index">
                 <v-layout align-center row wrap class="section">
                     <v-flex
@@ -162,5 +162,9 @@ export default {
 
 .offerings__tab-title {
     color: black;
+}
+
+.offerings__tabs-items {
+    background-color: transparent !important;
 }
 </style>

@@ -5,18 +5,17 @@
             :class="`elevation-${hover ? 8 : 2}`"
             max-width="450"
             height="152"
-            class="pricing-card"
+            class="pricing-card d-flex flex-column"
         >
-            <v-card-title primary-title class="pricing-card__title">
-                <div>
-                    <h3 class="title mb-0">{{ title }}</h3>
-                    <span
-                        class="grey--text subtitle-2 pricing-card__subtitle"
-                        >{{ subtitle }}</span
-                    >
-                </div>
+            <v-spacer />
+            <v-card-title primary-title class="pricing-card__title pb-0">
+                <h3 class="title mb-0">{{ title }}</h3>
             </v-card-title>
 
+            <v-card-text class="grey--text subtitle-2 pricing-card__subtitle">
+                {{ subtitle }}
+            </v-card-text>
+            <v-spacer />
             <v-divider light></v-divider>
 
             <v-card-actions class="pricing-section body-2">
@@ -65,8 +64,8 @@ export default {
     margin: 0 auto;
 }
 
-.pricing-card__title {
-    height: 114px;
+.pricing-section {
+    height: 36px;
 }
 
 .pricing-card__subtitle {
