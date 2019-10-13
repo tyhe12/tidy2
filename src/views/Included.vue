@@ -8,15 +8,15 @@
                     </v-flex>
                     <v-flex xs12 sm7>
                         <v-card-title primary-title>
-                            <div>
-                                <div class="title">
-                                    {{ room.title }}
-                                </div>
-                                <div class="body-1">
-                                    {{ room.text }}
-                                </div>
+                            <div class="title">
+                                {{ room.title }}
                             </div>
                         </v-card-title>
+                        <v-card-text>
+                            <p class="body-1">
+                                {{ room.text }}
+                            </p>
+                        </v-card-text>
                     </v-flex>
                 </v-layout>
             </v-card>
@@ -38,7 +38,7 @@ export default {
                 img: Livingroom,
                 title: 'Bedrooms, Living Room & Common Areas',
                 text:
-                    'Tidy up, make bed (change linen by request) surfaces dust, mirrors cleaned and general tidying up.'
+                    'General tidying up, mirrors cleaned, make bed (change linen by request). Dust all accessible surfaces also wipe and clean window sills.'
             },
             {
                 img: Bathroom,
@@ -56,7 +56,7 @@ export default {
                 img: Everyroom,
                 title: 'Every Room',
                 text:
-                    'General tidying up, clean all floor surfaces, remove trash & recycling.'
+                    'General tidying up, clean all floor surfaces (vacuum & mop), remove trash & recycling.'
             }
         ]
     })

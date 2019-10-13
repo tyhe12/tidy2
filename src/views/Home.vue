@@ -29,15 +29,15 @@
                                     <div
                                         class="text-xs-center subheading v-carousel__text"
                                     >
-                                        I'm here to provide a clean and a
-                                        positive atmosphere in my clients’ home
+                                        We are here to provide a clean and a
+                                        positive atmosphere in our clients’ home
                                         by delivering world class customer
-                                        service and cleaning. I value open and
-                                        honest relationships with my clients and
-                                        love giving them a little time back in
-                                        their week to focus on their goals. I
-                                        want to always deliver the “Wow” through
-                                        my services.
+                                        service and cleaning. We value open and
+                                        honest relationships with our clients
+                                        and love giving them a little time back
+                                        in their week to focus on their goals.
+                                        We want to always deliver the “Wow”
+                                        through our services.
                                     </div>
                                 </div>
                             </v-expand-transition>
@@ -52,15 +52,15 @@
                 <div
                     class="headline font-weight-bold headline-text text-center"
                 >
-                    "My Mission Statement"
+                    "Mission Statement"
                 </div>
                 <p class="text-center subheading" color="pink lighten-3">
-                    My goal is to provide a clean and a positive atmosphere in
-                    my clients’ home by delivering world class customer service
-                    and cleaning. I value open and honest relationships with my
-                    clients and love giving them a little time back in their
-                    week to focus on their goals. I want to always deliver the
-                    “Wow” through my services.
+                    Our goal is to provide a clean and a positive atmosphere in
+                    our clients’ home by delivering world class customer service
+                    and cleaning. We value open and honest relationships with
+                    our clients and love giving them a little time back in their
+                    week to focus on their goals. We want to always deliver the
+                    “Wow” through our services.
                 </p>
             </v-flex>
             <v-flex xs12 md5 d-flex align-center justify-center>

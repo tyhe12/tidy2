@@ -11,7 +11,7 @@
                 <div>
                     <h3 class="title mb-0">{{ title }}</h3>
                     <span
-                        class="grey--text subtitle-2	 pricing-card__subtitle"
+                        class="grey--text subtitle-2 pricing-card__subtitle"
                         >{{ subtitle }}</span
                     >
                 </div>

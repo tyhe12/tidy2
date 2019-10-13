@@ -2,7 +2,11 @@
     <v-navigation-drawer v-model="show" fixed temporary>
         <v-layout column fill-height>
             <v-list class="pa-1">
-                <v-list-item to="/">
+                <v-list-item
+                    class="link__logo"
+                    to="/"
+                    active-class="link__logo--active"
+                >
                     <v-list-item-content>
                         <v-img :src="logo" contain width="230"></v-img>
                     </v-list-item-content>
@@ -114,11 +118,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.link {
-    cursor: pointer;
-}
-
-.link:hover {
-    color: $primary-color;
+.link__logo--active {
+    color: transparent !important;
 }
 </style>
