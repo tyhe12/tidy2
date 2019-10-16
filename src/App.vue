@@ -36,6 +36,10 @@ export default {
     },
     beforeCreate() {
         this.$store.dispatch('loadReviews')
+    },
+    metaInfo: {
+        title: 'Home',
+        titleTemplate: 'Cleaning With Cooley - %s'
     }
 }
 </script>

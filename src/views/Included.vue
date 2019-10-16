@@ -59,7 +59,16 @@ export default {
                     'General tidying up, clean all floor surfaces (vacuum & mop), remove trash & recycling.'
             }
         ]
-    })
+    }),
+    metaInfo: {
+        title: 'Services Included',
+        meta: [
+            {
+                name: 'description',
+                content: 'What our services include for Cleaning With Cooley'
+            }
+        ]
+    }
 }
 </script>
 

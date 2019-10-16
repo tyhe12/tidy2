@@ -176,6 +176,15 @@ export default {
                 }
             ]
         }
+    },
+    metaInfo: {
+        title: 'Home',
+        meta: [
+            {
+                name: 'description',
+                content: 'Home page for Cleaning With Cooley'
+            }
+        ]
     }
 }
 </script>

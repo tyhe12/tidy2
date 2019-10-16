@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueMeta from 'vue-meta'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Faqs from './views/Faqs.vue'
@@ -7,9 +8,13 @@ import Offerings from './views/Offerings.vue'
 import Reviews from './views/Reviews.vue'
 import Included from './views/Included.vue'
 
+Vue.use(VueMeta, {
+    refreshOnceOnNavigation: true
+})
 Vue.use(Router)
 
 const router = new Router({
+    mode: 'history',
     routes: [
         {
             path: '/',

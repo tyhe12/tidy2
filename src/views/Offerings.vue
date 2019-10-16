@@ -147,6 +147,15 @@ export default {
                 }
             ]
         }
+    },
+    metaInfo: {
+        title: 'Services Provided',
+        meta: [
+            {
+                name: 'description',
+                content: 'What services we provide for Cleaning With Cooley'
+            }
+        ]
     }
 }
 </script>

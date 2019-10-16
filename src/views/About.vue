@@ -71,7 +71,16 @@ import Headshot from '../assets/img/headshot.png'
 export default {
     data: () => ({
         headshot: Headshot
-    })
+    }),
+    metaInfo: {
+        title: 'About',
+        meta: [
+            {
+                name: 'description',
+                content: 'About page for Cleaning With Cooley'
+            }
+        ]
+    }
 }
 </script>
 

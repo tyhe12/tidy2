@@ -62,6 +62,15 @@ export default {
             this.$store.dispatch('addReview', review)
             this.showAlert = true
         }
+    },
+    metaInfo: {
+        title: 'Reviews',
+        meta: [
+            {
+                name: 'description',
+                content: 'Reviews page for Cleaning With Cooley'
+            }
+        ]
     }
 }
 </script>

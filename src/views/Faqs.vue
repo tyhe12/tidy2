@@ -99,7 +99,16 @@ export default {
                     'In some instances it may make sense to do an hourly service. We have a minimum fo 4 hours when booking hourly services. This is generally reserved for very large homes.'
             }
         ]
-    })
+    }),
+    metaInfo: {
+        title: 'FAQs',
+        meta: [
+            {
+                name: 'description',
+                content: 'FAQs page for Cleaning With Cooley'
+            }
+        ]
+    }
 }
 </script>
 
