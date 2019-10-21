@@ -75,7 +75,13 @@ export default {
         }
     },
     fetch({ store }) {
-        return store.dispatch('reviews/load')
+        store.dispatch('reviews/load')
+    },
+    created() {
+        // seems like a hack
+        if (!this.reviewsCount) {
+            this.$store.dispatch('reviews/load')
+        }
     },
     methods: {
         submitHandler(review) {

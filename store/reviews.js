@@ -6,21 +6,21 @@ export const state = () => ({
 
 export const mutations = {
     set(state, reviews) {
-        state.reviews = reviews.data
+        state.reviews = reviews
     },
-    add(state, newReview) {
-        state.reviews.push(newReview)
+    add(state, review) {
+        state.reviews.push(review)
     }
 }
 
 export const actions = {
     async load({ commit }) {
         const reviews = await axios.get(process.env.reviewsUrl)
-        commit('set', reviews)
+        commit('set', reviews.data)
     },
-    async add({ commit }, newReview) {
-        commit('add', newReview)
-        await axios.post(process.env.reviewsUrl, newReview)
+    async add({ commit }, review) {
+        commit('add', review)
+        await axios.post(process.env.reviewsUrl, review)
     }
 }
 

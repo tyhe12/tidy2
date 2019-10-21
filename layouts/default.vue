@@ -6,7 +6,7 @@
 
         <v-content class="content mt-16">
             <v-container grid-list-lg>
-                <router-view />
+                <nuxt />
             </v-container>
         </v-content>
 
