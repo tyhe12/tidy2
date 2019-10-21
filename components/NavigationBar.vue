@@ -2,9 +2,9 @@
     <v-app-bar fixed>
         <v-app-bar-nav-icon @click="iconClickHandler"></v-app-bar-nav-icon>
         <v-toolbar-title class="headline text-uppercase">
-            <router-link class="link-title" tag="span" to="/">
+            <nuxt-link class="link-title" tag="span" to="/">
                 <v-img :src="logo" contain height="100%" width="230"></v-img>
-            </router-link>
+            </nuxt-link>
         </v-toolbar-title>
 
         <v-spacer></v-spacer>

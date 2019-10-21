@@ -5,22 +5,22 @@ export const state = () => ({
 })
 
 export const mutations = {
-    refresh: async (state) => {
-        const reviews = await axios.get(process.env.reviewsUrl)
+    set(state, reviews) {
         state.reviews = reviews.data
     },
     add(state, newReview) {
         state.reviews.push(newReview)
-        axios.post(process.env.reviewsUrl, newReview)
     }
 }
 
 export const actions = {
     async load({ commit }) {
-        await commit('refresh')
+        const reviews = await axios.get(process.env.reviewsUrl)
+        commit('set', reviews)
     },
-    add({ commit }, newReview) {
+    async add({ commit }, newReview) {
         commit('add', newReview)
+        await axios.post(process.env.reviewsUrl, newReview)
     }
 }
 

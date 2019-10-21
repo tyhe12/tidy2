@@ -8,7 +8,7 @@
                 <v-expansion-panel-content>
                     We will clean every room for you, for more details please
                     check out
-                    <router-link to="/included">What Is Included</router-link>.
+                    <nuxt-link to="/included">What Is Included</nuxt-link>.
                 </v-expansion-panel-content>
             </v-expansion-panel>
 

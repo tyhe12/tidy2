@@ -17,6 +17,16 @@
                 </review-card>
             </v-flex>
 
+            <v-container v-if="loading">
+                <v-skeleton-loader
+                    v-for="n in 5"
+                    :key="n"
+                    class="mb-4"
+                    type="article"
+                    :loading="loading"
+                ></v-skeleton-loader>
+            </v-container>
+
             <v-flex xs12>
                 <review-form
                     id="review-form"
@@ -42,7 +52,6 @@ import ReviewCard from '../components/ReviewCard.vue'
 import ReviewForm from '../components/ReviewForm.vue'
 
 export default {
-    watchQuery: true,
     components: {
         ReviewCard,
         ReviewForm
@@ -52,13 +61,17 @@ export default {
         showAlert: false,
         target: '#review-form',
         options: {
-            offset: 10
+            offset: 75
         }
     }),
     computed: {
         ...mapGetters({
-            reviews: 'reviews/reviews'
-        })
+            reviews: 'reviews/reviews',
+            reviewsCount: 'reviews/count'
+        }),
+        loading() {
+            return this.reviewsCount === 0
+        }
     },
     async fetch({ store }) {
         await store.dispatch('reviews/load')
