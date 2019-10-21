@@ -47,6 +47,7 @@
 import PricingCard from '../components/PricingCard.vue'
 
 export default {
+    scrollToTop: true,
     components: {
         PricingCard
     },

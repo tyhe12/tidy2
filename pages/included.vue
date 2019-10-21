@@ -32,6 +32,7 @@ import Everyroom from '~/assets/img/everyroom.jpg'
 import Bathroom from '~/assets/img/bathroom.jpg'
 
 export default {
+    scrollToTop: true,
     data: () => ({
         rooms: [
             {

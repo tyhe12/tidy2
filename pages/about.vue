@@ -59,6 +59,7 @@
 import Headshot from '../assets/img/headshot.png'
 
 export default {
+    scrollToTop: true,
     data: () => ({
         headshot: Headshot
     }),

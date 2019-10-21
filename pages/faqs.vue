@@ -26,6 +26,7 @@
 
 <script>
 export default {
+    scrollToTop: true,
     data: () => ({
         faqs: [
             {

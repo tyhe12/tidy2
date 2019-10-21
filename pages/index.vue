@@ -155,6 +155,7 @@ import RoundLogo from '~/assets/img/logo_round.png'
 import LivingRoom from '~/assets/img/living.jpg'
 
 export default {
+    scrollToTop: true,
     data() {
         return {
             bondedImg: BondedImage,

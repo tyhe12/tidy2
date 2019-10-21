@@ -52,6 +52,7 @@ import ReviewCard from '../components/ReviewCard.vue'
 import ReviewForm from '../components/ReviewForm.vue'
 
 export default {
+    scrollToTop: true,
     components: {
         ReviewCard,
         ReviewForm
