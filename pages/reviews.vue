@@ -73,8 +73,8 @@ export default {
             return this.reviewsCount === 0
         }
     },
-    async fetch({ store }) {
-        await store.dispatch('reviews/load')
+    fetch({ store }) {
+        return store.dispatch('reviews/load')
     },
     methods: {
         submitHandler(review) {
