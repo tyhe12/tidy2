@@ -75,7 +75,7 @@ dist
 .vuepress/dist
 
 # Serverless directories
-.serverless
+# .serverless
 
 # IDE / Editor
 .idea
