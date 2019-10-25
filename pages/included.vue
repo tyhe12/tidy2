@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Livingroom from '~/assets/img/blc.jpg'
+import Livingroom from '~/assets/img/livingroom.jpg'
 import Kitchen from '~/assets/img/kitchen.jpg'
 import Everyroom from '~/assets/img/everyroom.jpg'
 import Bathroom from '~/assets/img/bathroom.jpg'
@@ -37,7 +37,7 @@ export default {
         rooms: [
             {
                 img: Livingroom,
-                title: 'Bedrooms, Living Room & Common Areas',
+                title: 'Bedrooms, Living Room',
                 text:
                     'General tidying up, mirrors cleaned, make bed (change linen by request). Dust all accessible surfaces also wipe and clean window sills.'
             },
@@ -51,13 +51,13 @@ export default {
                 img: Kitchen,
                 title: 'Kitchens',
                 text:
-                    'Clean the stovetop and backsplash. Clean and sanitize interior and exterior of microwave. Clean the exterior of appliances, clean and disinfect the sink. Hand-wash and disinfect counters, wipe down table and chairs. Cabinets wiped down. Hand-wipe outside of the trash can. General tidying up.'
+                    'Clean the stovetop and backsplash. Clean and sanitize interior and exterior of microwave. Clean the exterior of appliances, clean and disinfect the sink. Hand-wash and disinfect counters, wipe down table and chairs. Cabinets wiped down. Hand-wipe outside of the trash can.'
             },
             {
                 img: Everyroom,
                 title: 'Every Room',
                 text:
-                    'General tidying up, clean all floor surfaces (vacuum & mop), remove trash & recycling.'
+                    'General tidying up, clean all floor surfaces (vacuum & mop). Dust exposed baseboards and remove smudges from light switch plates. Clean window sills and remove trash and recycling.'
             }
         ]
     }),

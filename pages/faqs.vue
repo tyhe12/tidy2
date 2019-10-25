@@ -32,7 +32,7 @@ export default {
             {
                 title: 'Are you insured?',
                 text:
-                    'Yes, Cleaning with Cooley is fully Bonded &amp; Insured to protect your home and give you a peace of mind.'
+                    'Yes, Cleaning with Cooley is fully Bonded & Insured to protect your home and give you a peace of mind.'
             },
             {
                 title: 'How do I pay?',
