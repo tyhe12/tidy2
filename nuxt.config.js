@@ -96,7 +96,7 @@ export default {
         extend(config, ctx) {}
     },
     googleAnalytics: {
-        id: 'UA-147750634-1'
+        id: process.env.GOOGLE_ANALYTICS_ID
     },
     env: {
         reviewsUrl: process.env.API_REVIEWS
