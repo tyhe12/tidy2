@@ -37,7 +37,7 @@ export default {
         rooms: [
             {
                 img: Livingroom,
-                title: 'Bedrooms, Living Room',
+                title: 'Bedrooms & Living Room',
                 text:
                     'General tidying up, mirrors cleaned, make bed (change linen by request). Dust all accessible surfaces also wipe and clean window sills.'
             },
