@@ -74,13 +74,12 @@
             </v-flex>
         </v-layout>
 
-        <!-- <v-divider xs12 class="section" /> -->
         <v-layout align-center justify-center row wrap class="section--big">
             <v-flex xs12 md6 order-md2>
                 <div
                     class="headline font-weight-bold headline-text text-center"
                 >
-                    "Referral Incentives?"
+                    "Referral Incentives"
                 </div>
                 <p class="text-center subheading" color="pink lighten-3">
                     Get 25% off your next clean and get your friend 15% off.
@@ -104,7 +103,7 @@
                 <div
                     class="headline font-weight-bold headline-text text-center"
                 >
-                    "Why Clean With Cooley?"
+                    "Why Clean With Cooley"
                 </div>
                 <v-list dense class="transparent">
                     <v-list-item>
