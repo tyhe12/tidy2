@@ -10,24 +10,24 @@
 
                 <v-text-field
                     v-model="title"
+                    :rules="titleRules"
                     name="Title"
                     label="Title"
-                    :rules="titleRules"
                 ></v-text-field>
 
                 <v-text-field
                     v-model="email"
+                    :rules="emailRules"
                     name="Email"
                     label="Email"
-                    :rules="emailRules"
                 ></v-text-field>
 
                 <v-textarea
                     v-model="review"
+                    :rules="reviewRules"
                     name="Review"
                     label="Please leave your comments here"
                     hint="Please tell us what you think to help us get better"
-                    :rules="reviewRules"
                 ></v-textarea>
 
                 <star-rating
@@ -37,7 +37,7 @@
                     centered
                 ></star-rating>
 
-                <v-btn color="primary" @click="submit">
+                <v-btn @click="submit" color="primary">
                     Submit
                 </v-btn>
             </v-form>

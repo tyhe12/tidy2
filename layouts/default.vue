@@ -1,8 +1,8 @@
 <template>
     <v-app class="app">
-        <navigation-bar app @click:icon="clickIconHandler" />
+        <navigation-bar @click:icon="clickIconHandler" app />
 
-        <navigation-drawer app :drawer.sync="drawer" />
+        <navigation-drawer :drawer.sync="drawer" app />
 
         <v-content class="content mt-16">
             <v-container grid-list-lg>

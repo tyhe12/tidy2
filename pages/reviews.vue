@@ -3,9 +3,9 @@
         <v-layout align-center justify-center row wrap>
             <v-flex xs12 class="d-flex justify-end">
                 <v-btn
+                    @click="$vuetify.goTo(target, options)"
                     class="write-review-button"
                     color="primary"
-                    @click="$vuetify.goTo(target, options)"
                 >
                     Write a Review
                 </v-btn>
@@ -21,9 +21,9 @@
                 <v-skeleton-loader
                     v-for="n in 5"
                     :key="n"
+                    :loading="loading"
                     class="mb-4"
                     type="article"
-                    :loading="loading"
                 ></v-skeleton-loader>
             </v-container>
 
@@ -36,9 +36,9 @@
         </v-layout>
         <v-snackbar
             v-model="showAlert"
+            :timeout="timeout"
             top
             color="primary"
-            :timeout="timeout"
             class="title review-form__snackbar"
         >
             Your review has been submitted! We really appreciate your review!

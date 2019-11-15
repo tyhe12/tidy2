@@ -52,7 +52,7 @@ export default {
     modules: [
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
-        '@nuxtjs/google-analytics'
+        '@nuxtjs/google-gtag'
     ],
     /*
      ** Axios module configuration
@@ -95,7 +95,7 @@ export default {
          */
         extend(config, ctx) {}
     },
-    googleAnalytics: {
+    'google-gtag': {
         id: process.env.GOOGLE_ANALYTICS_ID
     },
     env: {

@@ -2,7 +2,6 @@
     <div class="star-rating">
         <v-rating
             v-model="localValue"
-            class="star-rating__rating"
             :background-color="backgroundColor"
             :color="color"
             :readonly="readonly"
@@ -11,6 +10,7 @@
                 'star-rating__rating--sm-right': smallRight,
                 'star-rating__raiting--centered': centered
             }"
+            class="star-rating__rating"
         ></v-rating>
     </div>
 </template>

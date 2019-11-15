@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 module.exports = {
     pluginOptions: {
         s3Deploy: {
             awsProfile: 'default',
-            region: 'us-west-1',
-            bucket: 'dev.cleaningwithcooley.com',
+            region: process.env.REGION_NAME,
+            bucket: process.env.BUCKET_NAME,
             createBucket: true,
             staticHosting: true,
             staticIndexPage: 'index.html',
@@ -15,8 +17,8 @@ module.exports = {
             pwa: false,
             uploadConcurrency: 5,
             pluginVersion: '3.0.0',
-            enableCloudfront: false,
-            cloudfrontId: '',
+            enableCloudfront: process.env.CLOUDFRONT_ID !== '',
+            cloudfrontId: process.env.CLOUDFRONT_ID,
             cloudfrontMatchers: '/*'
         }
     }

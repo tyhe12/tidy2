@@ -19,8 +19,8 @@
                                 <v-list-item
                                     v-for="item in items"
                                     :key="item.title"
-                                    class="footer__navigate-item"
                                     :to="item.link"
+                                    class="footer__navigate-item"
                                 >
                                     <v-list-item-content
                                         class="footer__navigate-item-content pt-1 pb-1"
@@ -44,9 +44,9 @@
                             <v-btn
                                 v-for="(icon, idx) in icons"
                                 :key="idx"
+                                :href="icon.link"
                                 class="mx-3 white--text"
                                 icon
-                                :href="icon.link"
                             >
                                 <v-icon size="24px">{{ icon.icon }}</v-icon>
                             </v-btn>

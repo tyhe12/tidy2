@@ -66,9 +66,9 @@
             <v-flex xs12 md5 d-flex align-center justify-center>
                 <v-img
                     :src="roundLogo"
-                    contain
                     :height="imgSize"
                     :width="imgSize"
+                    contain
                     alt="Logo"
                 ></v-img>
             </v-flex>
@@ -134,9 +134,9 @@
             <v-flex xs12 md6 d-flex align-center justify-center>
                 <v-img
                     :src="bondedImg"
-                    contain
                     :height="imgSize"
                     :width="imgSize"
+                    contain
                     alt="Bonded and Insured"
                 ></v-img>
             </v-flex>

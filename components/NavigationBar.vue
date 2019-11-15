@@ -25,7 +25,7 @@
                 nudge-bottom="64"
             >
                 <template v-slot:activator="{ on }">
-                    <v-btn class="link" text tile large v-on="on">
+                    <v-btn v-on="on" class="link" text tile large>
                         More
                         <v-icon small class="ml-2">fa-angle-down</v-icon>
                     </v-btn>
@@ -38,11 +38,11 @@
                         class="navigation__menu-list-item"
                     >
                         <v-btn
+                            :to="item.link"
                             class="link link-menu"
                             text
                             tile
                             large
-                            :to="item.link"
                         >
                             {{ item.title }}
                         </v-btn>
