@@ -10,7 +10,7 @@
 
         <v-flex xs12 d-flex justify-center>
             <v-avatar size="200">
-                <img :src="headshot" alt="avatar" />
+                <img :src="headshot" alt="Tracy Cooley Photo" />
             </v-avatar>
         </v-flex>
 

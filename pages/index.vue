@@ -93,7 +93,7 @@
             </v-flex>
             <v-flex xs12 md6 d-flex align-center justify-center>
                 <v-avatar :size="imgSize">
-                    <img :src="avatarImg" alt="avatar" />
+                    <img :src="livingRoomImg" alt="Living room avatar" />
                 </v-avatar>
             </v-flex>
         </v-layout>
@@ -159,7 +159,7 @@ export default {
         return {
             bondedImg: BondedImage,
             roundLogo: RoundLogo,
-            avatarImg: LivingRoom,
+            livingRoomImg: LivingRoom,
             imgSize: 200,
             items: [
                 {

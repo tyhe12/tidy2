@@ -45,6 +45,7 @@
                                 v-for="(icon, idx) in icons"
                                 :key="idx"
                                 :href="icon.link"
+                                :aria-label="`Link to ${icon.name}`"
                                 class="mx-3 white--text"
                                 icon
                             >
@@ -81,22 +82,27 @@ export default {
         ],
         icons: [
             {
+                name: 'Facebook',
                 icon: 'fab fa-facebook',
                 link: 'https://www.facebook.com/CleaningwithCooley'
             },
             {
+                name: 'Instagram',
                 icon: 'fab fa-instagram',
                 link: 'https://www.instagram.com/cleaningwithcooley/'
             },
             {
+                name: 'Twitter',
                 icon: 'fab fa-twitter',
                 link: 'https://twitter.com/CleaningwCooley'
             },
             {
+                name: 'Phone',
                 icon: 'fas fa-phone',
                 link: 'tel:708-308-8582'
             },
             {
+                name: 'Email',
                 icon: 'fas fa-envelope',
                 link: 'mailto:info@cleaningwithcooley.com'
             }

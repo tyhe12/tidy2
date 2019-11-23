@@ -20,7 +20,8 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/google-gtag": "^1.0.4",
     "dotenv": "^8.1.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "nuxt-compress": "^1.0.2"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",

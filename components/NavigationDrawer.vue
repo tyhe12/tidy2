@@ -8,7 +8,12 @@
                     active-class="link__logo--active"
                 >
                     <v-list-item-content>
-                        <v-img :src="logo" contain width="230"></v-img>
+                        <v-img
+                            :src="logo"
+                            contain
+                            width="230"
+                            alt="Cleaning With Cooley Logo"
+                        ></v-img>
                     </v-list-item-content>
                 </v-list-item>
             </v-list>

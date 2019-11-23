@@ -8,6 +8,9 @@ export default {
      ** Headers of the page
      */
     head: {
+        htmlAttrs: {
+            lang: 'en'
+        },
         titleTemplate: '%s | ' + process.env.PROJECT_NAME,
         title: process.env.PROJECT_NAME,
         meta: [
@@ -52,7 +55,8 @@ export default {
     modules: [
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
-        '@nuxtjs/google-gtag'
+        '@nuxtjs/google-gtag',
+        'nuxt-compress'
     ],
     /*
      ** Axios module configuration

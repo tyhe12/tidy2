@@ -37,7 +37,7 @@
                     centered
                 ></star-rating>
 
-                <v-btn @click="submit" color="primary">
+                <v-btn @click="submit" color="primary" aria-label="Submit">
                     Submit
                 </v-btn>
             </v-form>

@@ -1,19 +1,42 @@
 <template>
     <v-app-bar fixed>
-        <v-app-bar-nav-icon @click="iconClickHandler"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon
+            @click="iconClickHandler"
+            aria-label="Toggle Navigation Side Bar"
+        ></v-app-bar-nav-icon>
         <v-toolbar-title class="headline text-uppercase">
             <nuxt-link class="link-title" tag="span" to="/">
-                <v-img :src="logo" contain height="100%" width="230"></v-img>
+                <v-img
+                    :src="logo"
+                    contain
+                    height="100%"
+                    width="230"
+                    alt="Cleaning With Cooley Logo"
+                ></v-img>
             </nuxt-link>
         </v-toolbar-title>
 
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
-            <v-btn class="link link-btn" text tile large to="/about">
+            <v-btn
+                class="link link-btn"
+                text
+                tile
+                large
+                to="/about"
+                aria-label="Link to bio page"
+            >
                 Who I Am
             </v-btn>
 
-            <v-btn class="link link-btn" text tile large to="/offerings">
+            <v-btn
+                class="link link-btn"
+                text
+                tile
+                large
+                to="/offerings"
+                aria-label="Link to my services page"
+            >
                 My Services
             </v-btn>
 
@@ -25,7 +48,14 @@
                 nudge-bottom="64"
             >
                 <template v-slot:activator="{ on }">
-                    <v-btn v-on="on" class="link" text tile large>
+                    <v-btn
+                        v-on="on"
+                        class="link"
+                        text
+                        tile
+                        large
+                        aria-label="More links"
+                    >
                         More
                         <v-icon small class="ml-2">fa-angle-down</v-icon>
                     </v-btn>
@@ -39,6 +69,7 @@
                     >
                         <v-btn
                             :to="item.link"
+                            :aria-label="`Link to ${item.title}`"
                             class="link link-menu"
                             text
                             tile
