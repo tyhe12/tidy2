@@ -182,9 +182,10 @@ export default {
             title: 'Home',
             meta: [
                 {
+                    hid: 'description',
                     name: 'description',
                     content:
-                        'Home page, Cleaning With Cooley is a privately owned house cleaning services based in Chicago. We take pride in our cleaning, and our goal is to provide a clean and a positive atmosphere for you'
+                        'Imagine a cleaning company that pays attention to detail, has eco friendly products, customize each clean to each customers standards. Cleaning with Cooley is here to make all your cleaning services come true. We’re a cleaning service that takes pride in our work and our customers. We offer different cleaning products to suit every customers needs. We offer a cleaning service that fits your needs!'
                 }
             ]
         }

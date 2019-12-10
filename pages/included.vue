@@ -75,9 +75,10 @@ export default {
             title: 'Services Included',
             meta: [
                 {
+                    hid: 'description',
                     name: 'description',
                     content:
-                        'What our services include for Cleaning With Cooley'
+                        'Cleaning with Cooley is very detailed and we try to make things easy as possible for our customers. Each room in your home is cleaned to perfection! We detail clean every room up to customer and company’s standards. Each room is cleaned, disinfected and scrubbed to perfection. Every room floors are vacuumed and mopped so everything can be clean and welcoming.'
                 }
             ]
         }

@@ -154,8 +154,10 @@ export default {
             title: 'Services Provided',
             meta: [
                 {
+                    hid: 'description',
                     name: 'description',
-                    content: 'What services we provide for Cleaning With Cooley'
+                    content:
+                        'Cleaning with Cooley offer different services to meet each customer needs. We offer hourly cleaning services and flat rate cleaning services. Our cleaning company want to accommodate everyone, so we also offer office cleaning and commercial cleaning. We have so many add on services for cleaning needs. We Clean interior/exterior of refrigeration and ovens. We clean windows, we offer a laundry service and general organization.'
                 }
             ]
         }

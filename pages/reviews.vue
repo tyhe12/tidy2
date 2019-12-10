@@ -95,8 +95,10 @@ export default {
             title: 'Reviews',
             meta: [
                 {
+                    hid: 'description',
                     name: 'description',
-                    content: 'Reviews page for Cleaning With Cooley'
+                    content:
+                        'Cleaning with Cooley love to hear from our clients. We made a page for everyone to write about their experience with Cleaning with Cooley. We love to hear feedback on your experience with our company and also this gives us ways to improve and keep excelling for our customers.'
                 }
             ]
         }

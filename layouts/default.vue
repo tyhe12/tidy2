@@ -32,6 +32,25 @@ export default {
         clickIconHandler() {
             this.drawer = !this.drawer
         }
+    },
+    head() {
+        return {
+            titleTemplate: '%s | ' + process.env.PROJECT_NAME,
+            title: process.env.PROJECT_NAME,
+            meta: [
+                { charset: 'utf-8' },
+                {
+                    name: 'viewport',
+                    content: 'width=device-width, initial-scale=1'
+                },
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content:
+                        'Cleaning With Cooley is a privately owned house cleaning services based in Chicago.'
+                }
+            ]
+        }
     }
 }
 </script>

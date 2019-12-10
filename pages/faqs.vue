@@ -106,8 +106,10 @@ export default {
             title: 'FAQs',
             meta: [
                 {
+                    hid: 'description',
                     name: 'description',
-                    content: 'FAQs page for Cleaning With Cooley'
+                    content:
+                        'Cleaning with Cooley try our best to accommodate each customer by making our website unique. We’ve answered some of the most frequently asked questions for our customers convenience. We try to provide every service our customers need and answer every question our customers provide.'
                 }
             ]
         }

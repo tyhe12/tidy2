@@ -68,8 +68,10 @@ export default {
             title: 'About',
             meta: [
                 {
+                    hid: 'description',
                     name: 'description',
-                    content: 'About Me page for Cleaning With Cooley'
+                    content:
+                        'I started Cleaning with Cooley in 2018. After keeping homes for over 15 years, I found that a successful clean depended on attention to detail, quality products and absolute integrity.'
                 }
             ]
         }

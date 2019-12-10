@@ -11,21 +11,6 @@ export default {
         htmlAttrs: {
             lang: 'en'
         },
-        titleTemplate: '%s | ' + process.env.PROJECT_NAME,
-        title: process.env.PROJECT_NAME,
-        meta: [
-            { charset: 'utf-8' },
-            {
-                name: 'viewport',
-                content: 'width=device-width, initial-scale=1'
-            },
-            {
-                hid: 'description',
-                name: 'description',
-                content:
-                    'Cleaning With Cooley is a privately owned house cleaning services based in Chicago.'
-            }
-        ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     },
     /*
@@ -55,8 +40,7 @@ export default {
     modules: [
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
-        '@nuxtjs/google-gtag',
-        'nuxt-compress'
+        '@nuxtjs/google-gtag'
     ],
     /*
      ** Axios module configuration
