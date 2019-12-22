@@ -24,7 +24,7 @@
                                     <div
                                         class="font-weight-bold headline text-xs-center v-carousel__headline"
                                     >
-                                        "Cleaning with Cooley Mission Statement"
+                                        Our Mission
                                     </div>
                                     <div
                                         class="text-xs-center subheading v-carousel__text"
@@ -52,7 +52,7 @@
                 <div
                     class="headline font-weight-bold headline-text text-center"
                 >
-                    "Mission Statement"
+                    Our Mission
                 </div>
                 <p class="text-center subheading" color="pink lighten-3">
                     Our goal is to provide a clean and a positive atmosphere in
@@ -79,7 +79,7 @@
                 <div
                     class="headline font-weight-bold headline-text text-center"
                 >
-                    "Referral Incentives"
+                    Referral Incentives
                 </div>
                 <p class="text-center subheading" color="pink lighten-3">
                     Get 25% off your next clean and get your friend 15% off.
@@ -103,7 +103,7 @@
                 <div
                     class="headline font-weight-bold headline-text text-center"
                 >
-                    "Why Clean With Cooley"
+                    Why Clean With Cooley
                 </div>
                 <v-list dense class="transparent">
                     <v-list-item>

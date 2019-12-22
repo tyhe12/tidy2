@@ -81,22 +81,18 @@ export default {
                 hourly: true
             },
             {
-                title: 'Winter/Spring Clean',
+                title: 'Special Event Clean',
                 price: 45,
-                subtitle:
-                    'Regular cleaning and hard-to-reach corners, you need this twice a year!',
                 hourly: true
             },
             {
-                title: 'Pre-party Clean',
+                title: 'Airbnb Turnover Clean',
                 price: 40,
-                subtitle: 'Common Areas, Prices vary with sizes',
                 hourly: true
             },
             {
-                title: 'After Party Clean',
-                price: 45,
-                subtitle: 'Prices vary with sizes',
+                title: 'Condo Association Clean',
+                price: 40,
                 hourly: true
             },
             {

@@ -16,7 +16,6 @@ module.exports = {
             acl: 'public-read',
             pwa: false,
             gzip: true,
-            gzipFilePattern: '_nuxt/*.js',
             uploadConcurrency: 5,
             pluginVersion: '4.0.0-rc2',
             enableCloudfront: process.env.CLOUDFRONT_ENABLE === 'true',
