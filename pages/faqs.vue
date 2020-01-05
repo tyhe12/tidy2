@@ -1,27 +1,29 @@
 <template>
-    <v-layout align-center justify-center row wrap mt-2>
-        <v-expansion-panels>
-            <v-expansion-panel>
-                <v-expansion-panel-header class="title">
-                    What’s all included in your cleaning services?
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                    We will clean every room for you, for more details please
-                    check out
-                    <nuxt-link to="/included">What Is Included</nuxt-link>.
-                </v-expansion-panel-content>
-            </v-expansion-panel>
+    <div class="faqs">
+        <v-layout align-center justify-center row wrap class="faq-layout">
+            <v-expansion-panels>
+                <v-expansion-panel>
+                    <v-expansion-panel-header class="title">
+                        What’s all included in your cleaning services?
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        We will clean every room for you, for more details
+                        please check out
+                        <nuxt-link to="/included">What Is Included</nuxt-link>.
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
 
-            <v-expansion-panel v-for="(faq, index) in faqs" :key="index">
-                <v-expansion-panel-header class="title">{{
-                    faq.title
-                }}</v-expansion-panel-header>
-                <v-expansion-panel-content>
-                    {{ faq.text }}
-                </v-expansion-panel-content>
-            </v-expansion-panel>
-        </v-expansion-panels>
-    </v-layout>
+                <v-expansion-panel v-for="(faq, index) in faqs" :key="index">
+                    <v-expansion-panel-header class="title">{{
+                        faq.title
+                    }}</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                        {{ faq.text }}
+                    </v-expansion-panel-content>
+                </v-expansion-panel>
+            </v-expansion-panels>
+        </v-layout>
+    </div>
 </template>
 
 <script>
@@ -98,6 +100,27 @@ export default {
                 title: 'Do you offer hourly service?',
                 text:
                     'In some instances it may make sense to do an hourly service. We have a minimum fo 4 hours when booking hourly services. This is generally reserved for very large homes.'
+            },
+            {
+                title: 'What if something is missed?',
+                text:
+                    'It is rare to find a company that stand behind its work. At Cleaning with Cooley we do just that! We are so confident in our cleaning service that we guarantee them. If for any reason you’re not satisfied with our work let us know within 48 hours and we will return to re clean any of the areas missed, free of charge.'
+            },
+            {
+                title: 'What if something’s damaged during a service?',
+                text:
+                    'Cleaning with Cooley treat every home with the utmost respect. If something happens to break during our service, we’ll do our best to repair it or replace it. Our company and housekeepers are fully insured, so claims can be filed when appropriate.'
+            },
+            {
+                title: 'How often can you provide service?',
+                text:
+                    'We leave this all up to you. Cleaning with Cooley will provide service weekly, bi-weekly, monthly, one time clean etc. It all depends on your cleaning needs.'
+            },
+            {
+                title:
+                    'Can I provide my housekeeper with special instructions?',
+                text:
+                    'Yes, your preference gives us the structure we need to enhance your cleaning experience and it also ensure that you’re completely happy & satisfied.'
             }
         ]
     }),
@@ -117,4 +140,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.faq-layout {
+    margin: 0 !important;
+}
+</style>

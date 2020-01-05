@@ -82,7 +82,7 @@
                     Referral Incentives
                 </div>
                 <p class="text-center subheading" color="pink lighten-3">
-                    Get 25% off your next clean and get your friend 15% off.
+                    Get 20% off your next clean and get your friend 20% off.
                 </p>
                 <p class="text-center subheading" color="pink lighten-3">
                     Get a free clean when you refer 3 friends.
@@ -127,6 +127,12 @@
                     <v-list-item>
                         <p class="list-text text-center subheading">
                             Professionally trained and great customer service
+                        </p>
+                    </v-list-item>
+
+                    <v-list-item>
+                        <p class="list-text text-center subheading">
+                            100% Satisfaction Guarantee
                         </p>
                     </v-list-item>
                 </v-list>
@@ -185,7 +191,7 @@ export default {
                     hid: 'description',
                     name: 'description',
                     content:
-                        'Imagine a cleaning company that pays attention to detail, has eco friendly products, customize each clean to each customers standards. Cleaning with Cooley is here to make all your cleaning services come true. We’re a cleaning service that takes pride in our work and our customers. We offer different cleaning products to suit every customers needs. We offer a cleaning service that fits your needs!'
+                        'Cleaning with Cooley is a housekeeping company here to make your home sparkle. We take pride in our work. We care about the details, use only eco-friendly products, and customize our service to fit your specific needs. Our customers love us, and we know you will too!'
                 }
             ]
         }

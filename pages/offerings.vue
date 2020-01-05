@@ -115,7 +115,7 @@ export default {
                 price: 30
             },
             {
-                title: 'Wash, Dry & Fold',
+                title: 'Laundry - Wash, Dry & Fold',
                 price: 35,
                 subtitle: 'Up to 2 loads, Additional $5/load'
             },

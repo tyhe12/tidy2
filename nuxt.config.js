@@ -92,6 +92,6 @@ export default {
     },
     sitemap: {
         hostname: 'https://cleaningwithcooley.com',
-        lastmod: '2019-12-22'
+        lastmod: '2020-01-04'
     }
 }
