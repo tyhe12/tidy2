@@ -40,7 +40,8 @@ export default {
     modules: [
         // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
-        '@nuxtjs/google-gtag'
+        '@nuxtjs/google-gtag',
+        '@nuxtjs/sitemap'
     ],
     /*
      ** Axios module configuration
@@ -88,5 +89,9 @@ export default {
     },
     env: {
         reviewsUrl: process.env.API_REVIEWS
+    },
+    sitemap: {
+        hostname: 'https://cleaningwithcooley.com',
+        lastmod: '2019-12-22'
     }
 }
