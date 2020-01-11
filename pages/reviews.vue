@@ -6,7 +6,7 @@
                     @click="$vuetify.goTo(target, options)"
                     class="write-review-button"
                     color="primary"
-                    aria-label="Scroll to Write a Review"
+                    aria-label="Write a Review"
                 >
                     Write a Review
                 </v-btn>

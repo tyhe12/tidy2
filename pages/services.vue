@@ -11,17 +11,17 @@
                 <v-tab
                     v-for="(tab, index) in tabs"
                     :key="index"
-                    class="offerings__tab"
+                    class="services__tab"
                     ripple
                 >
-                    <span class="title offerings__tab-title">
+                    <span class="title services__tab-title">
                         {{ tab.name }}
                     </span>
                 </v-tab>
             </v-tabs>
         </v-flex>
 
-        <v-tabs-items v-model="active" class="offerings__tabs-items">
+        <v-tabs-items v-model="active" class="services__tabs-items">
             <v-tab-item v-for="(tab, index) in tabs" :key="index">
                 <v-layout align-center row wrap class="section">
                     <v-flex
@@ -166,15 +166,15 @@ export default {
     margin-bottom: 24px;
 }
 
-.offerings__tab {
+.services__tab {
     width: 50%;
 }
 
-.offerings__tab-title {
+.services__tab-title {
     color: black;
 }
 
-.offerings__tabs-items {
+.services__tabs-items {
     background-color: transparent !important;
 }
 </style>

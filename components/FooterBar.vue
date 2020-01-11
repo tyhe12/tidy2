@@ -67,7 +67,7 @@ export default {
         items: [
             { title: 'Home', icon: 'fas fa-home', link: '/' },
             { title: 'Who I Am', icon: 'fas fa-user-circle', link: '/about' },
-            { title: 'My Services', icon: 'fas fa-tags', link: '/offerings' },
+            { title: 'My Services', icon: 'fas fa-tags', link: '/services' },
             {
                 title: 'What People Say',
                 icon: 'fas fa-comments',

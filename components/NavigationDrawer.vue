@@ -25,6 +25,7 @@
                     v-for="item in items"
                     :key="item.title"
                     :to="item.link"
+                    :aria-label="item.label"
                 >
                     <v-list-item-action class="mr-4">
                         <v-icon small>{{ item.icon }}</v-icon>
@@ -78,24 +79,32 @@ export default {
                 {
                     title: 'Who I Am',
                     icon: 'fas fa-user-circle',
-                    link: '/about'
+                    link: '/about',
+                    label: 'More about me'
                 },
                 {
                     title: 'My Services',
                     icon: 'fas fa-tags',
-                    link: '/offerings'
+                    link: '/services',
+                    label: 'More about our services'
                 },
                 {
                     title: 'What Is Included',
                     icon: 'fas fa-box-open',
-                    link: '/included'
+                    link: '/included',
+                    label: 'More about what is included in our services'
                 },
                 {
                     title: 'What People Say',
                     icon: 'fas fa-comments',
-                    link: '/reviews'
+                    link: '/reviews',
+                    label: 'More about reviews'
                 },
-                { title: 'FAQs', icon: 'fas fa-question-circle', link: '/faqs' }
+                { 
+                    title: 'FAQs',
+                    icon: 'fas fa-question-circle',
+                    link: '/faqs',
+                    label: 'More about FAQs' }
             ],
             contact: [
                 {

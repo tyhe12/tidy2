@@ -9,14 +9,6 @@
             <template v-slot:actions>
                 <v-icon>fa-angle-up</v-icon>
             </template>
-            <!-- <template v-slot:header class="faq-item__title">
-                <div class="title">{{ title }}</div>
-            </template> -->
-            <!-- <v-card>
-                <v-card-text>
-                    <slot />
-                </v-card-text>
-            </v-card> -->
             <slot />
         </v-expansion-panel-content>
     </v-expansion-panel>

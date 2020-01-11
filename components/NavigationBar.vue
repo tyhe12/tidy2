@@ -2,7 +2,7 @@
     <v-app-bar fixed>
         <v-app-bar-nav-icon
             @click="iconClickHandler"
-            aria-label="Toggle Navigation Side Bar"
+            aria-label="Navigation Menu"
         ></v-app-bar-nav-icon>
         <v-toolbar-title class="headline text-uppercase">
             <nuxt-link class="link-title" tag="span" to="/">
@@ -24,7 +24,7 @@
                 tile
                 large
                 to="/about"
-                aria-label="Link to bio page"
+                aria-label="More about me"
             >
                 Who I Am
             </v-btn>
@@ -34,8 +34,8 @@
                 text
                 tile
                 large
-                to="/offerings"
-                aria-label="Link to my services page"
+                to="/services"
+                aria-label="More about services we offer"
             >
                 My Services
             </v-btn>
@@ -69,7 +69,7 @@
                     >
                         <v-btn
                             :to="item.link"
-                            :aria-label="`Link to ${item.title}`"
+                            :aria-label="`More about ${item.title}`"
                             class="link link-menu"
                             text
                             tile
