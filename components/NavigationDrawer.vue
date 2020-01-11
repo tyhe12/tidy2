@@ -100,11 +100,12 @@ export default {
                     link: '/reviews',
                     label: 'More about reviews'
                 },
-                { 
+                {
                     title: 'FAQs',
                     icon: 'fas fa-question-circle',
                     link: '/faqs',
-                    label: 'More about FAQs' }
+                    label: 'More about FAQs'
+                }
             ],
             contact: [
                 {
