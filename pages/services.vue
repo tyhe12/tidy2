@@ -1,46 +1,48 @@
 <template>
-    <v-layout align-center row wrap class="mb-4">
-        <v-flex xs12>
-            <v-tabs
-                v-model="active"
-                background-color="transparent"
-                centered
-                grow
-                slider-color="pink lighten-3"
-            >
-                <v-tab
-                    v-for="(tab, index) in tabs"
-                    :key="index"
-                    class="services__tab"
-                    ripple
+    <v-container grid-list-lg>
+        <v-layout align-center row wrap class="mb-4">
+            <v-flex xs12>
+                <v-tabs
+                    v-model="active"
+                    background-color="transparent"
+                    centered
+                    grow
+                    slider-color="pink lighten-3"
                 >
-                    <span class="title services__tab-title">
-                        {{ tab.name }}
-                    </span>
-                </v-tab>
-            </v-tabs>
-        </v-flex>
-
-        <v-tabs-items v-model="active" class="services__tabs-items">
-            <v-tab-item v-for="(tab, index) in tabs" :key="index">
-                <v-layout align-center row wrap class="section">
-                    <v-flex
-                        v-for="(item, idx) in tab.items"
-                        :key="idx"
-                        xs12
-                        md6
+                    <v-tab
+                        v-for="(tab, index) in tabs"
+                        :key="index"
+                        class="services__tab"
+                        ripple
                     >
-                        <pricing-card
-                            :title="item.title"
-                            :price="item.price"
-                            :subtitle="item.subtitle"
-                            :hourly="item.hourly"
-                        />
-                    </v-flex>
-                </v-layout>
-            </v-tab-item>
-        </v-tabs-items>
-    </v-layout>
+                        <span class="title services__tab-title">
+                            {{ tab.name }}
+                        </span>
+                    </v-tab>
+                </v-tabs>
+            </v-flex>
+
+            <v-tabs-items v-model="active" class="services__tabs-items">
+                <v-tab-item v-for="(tab, index) in tabs" :key="index">
+                    <v-layout align-center row wrap class="section">
+                        <v-flex
+                            v-for="(item, idx) in tab.items"
+                            :key="idx"
+                            xs12
+                            md6
+                        >
+                            <pricing-card
+                                :title="item.title"
+                                :price="item.price"
+                                :subtitle="item.subtitle"
+                                :hourly="item.hourly"
+                            />
+                        </v-flex>
+                    </v-layout>
+                </v-tab-item>
+            </v-tabs-items>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>

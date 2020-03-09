@@ -1,5 +1,5 @@
 <template>
-    <div class="faqs">
+    <v-container class="faqs">
         <v-layout align-center justify-center row wrap class="faq-layout">
             <v-expansion-panels>
                 <v-expansion-panel>
@@ -23,7 +23,7 @@
                 </v-expansion-panel>
             </v-expansion-panels>
         </v-layout>
-    </div>
+    </v-container>
 </template>
 
 <script>

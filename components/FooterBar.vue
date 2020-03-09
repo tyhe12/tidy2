@@ -8,10 +8,11 @@
             <v-container fluid grid-list-xs>
                 <v-layout row wrap>
                     <v-flex sm6 xs12>
-                        <v-card-title primary-title>
-                            <div class="footer__content-title">
-                                <h3 class="title mb-0">Navigate</h3>
-                            </div>
+                        <v-card-title
+                            primary-title
+                            class="footer__content-title"
+                        >
+                            <h3 class="title mb-0">Navigate</h3>
                         </v-card-title>
 
                         <v-card-text class="footer__text--no-space-top">
@@ -78,7 +79,8 @@ export default {
                 icon: 'fas fa-box-open',
                 link: '/included'
             },
-            { title: 'FAQs', icon: 'fas fa-question-circle', link: '/faqs' }
+            { title: 'FAQs', icon: 'fas fa-question-circle', link: '/faqs' },
+            { title: 'Privacy Policy', icon: 'fas fa-key', link: '/privacy' }
         ],
         icons: [
             {
@@ -114,6 +116,11 @@ export default {
 <style>
 .footer__card--fullwidth {
     width: 100%;
+}
+
+.footer__content-title {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .footer__text {

@@ -102,6 +102,10 @@ export default {
             {
                 title: 'FAQs',
                 link: '/faqs'
+            },
+            {
+                title: 'Privacy Policy',
+                link: '/privacy'
             }
         ]
     }),

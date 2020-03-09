@@ -105,6 +105,12 @@ export default {
                     icon: 'fas fa-question-circle',
                     link: '/faqs',
                     label: 'More about FAQs'
+                },
+                {
+                    title: 'Privacy Policy',
+                    icon: 'fas fa-key',
+                    link: '/privacy',
+                    label: 'Privacy Policy of Cleaning With Cooley'
                 }
             ],
             contact: [

@@ -1,5 +1,5 @@
 <template>
-    <div class="reviews">
+    <v-container grid-list-lg class="reviews">
         <v-layout align-center justify-center row wrap>
             <v-flex xs12 class="d-flex justify-end">
                 <v-btn
@@ -44,7 +44,7 @@
         >
             Your review has been submitted! We really appreciate your review!
         </v-snackbar>
-    </div>
+    </v-container>
 </template>
 
 <script>

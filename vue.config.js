@@ -17,7 +17,7 @@ module.exports = {
             pwa: false,
             gzip: true,
             uploadConcurrency: 5,
-            pluginVersion: '4.0.0-rc2',
+            pluginVersion: '4.0.0-rc3',
             enableCloudfront: process.env.CLOUDFRONT_ENABLE === 'true',
             cloudfrontId: process.env.CLOUDFRONT_ID,
             cloudfrontMatchers: '/*'

@@ -5,9 +5,7 @@
         <navigation-drawer :drawer.sync="drawer" app />
 
         <v-content class="content mt-16">
-            <v-container grid-list-lg>
-                <nuxt />
-            </v-container>
+            <nuxt />
         </v-content>
 
         <footer-bar app />
@@ -48,6 +46,12 @@ export default {
                     name: 'description',
                     content:
                         'Cleaning With Cooley is a privately owned house cleaning services based in Chicago.'
+                },
+                {
+                    hid: 'keywords',
+                    name: 'keywords',
+                    content:
+                        'clean with cooley, cleaning with cooley, clean, cleaning, cooley, chicago, house cleaning service, cleaning service, chicago cleaner'
                 }
             ]
         }

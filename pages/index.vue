@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home">
         <v-layout align-center class="section--big">
             <v-flex xs12>
                 <v-hover>
@@ -47,106 +47,110 @@
             </v-flex>
         </v-layout>
 
-        <v-layout align-center justify-center row wrap class="section--big">
-            <v-flex xs12 md7>
-                <div
-                    class="headline font-weight-bold headline-text text-center"
-                >
-                    Our Mission
-                </div>
-                <p class="text-center subheading" color="pink lighten-3">
-                    Our goal is to provide a clean and a positive atmosphere in
-                    our clients’ home by delivering world class customer service
-                    and cleaning. We value open and honest relationships with
-                    our clients and love giving them a little time back in their
-                    week to focus on their goals. We want to always deliver the
-                    “Wow” through our services.
-                </p>
-            </v-flex>
-            <v-flex xs12 md5 d-flex align-center justify-center>
-                <v-img
-                    :src="roundLogo"
-                    :height="imgSize"
-                    :width="imgSize"
-                    contain
-                    alt="Logo"
-                ></v-img>
-            </v-flex>
-        </v-layout>
+        <v-container>
+            <v-layout align-center justify-center row wrap class="section--big">
+                <v-flex xs12 md7>
+                    <div
+                        class="headline font-weight-bold headline-text text-center"
+                    >
+                        Our Mission
+                    </div>
+                    <p class="text-center subheading" color="pink lighten-3">
+                        Our goal is to provide a clean and a positive atmosphere
+                        in our clients’ home by delivering world class customer
+                        service and cleaning. We value open and honest
+                        relationships with our clients and love giving them a
+                        little time back in their week to focus on their goals.
+                        We want to always deliver the “Wow” through our
+                        services.
+                    </p>
+                </v-flex>
+                <v-flex xs12 md5 d-flex align-center justify-center>
+                    <v-img
+                        :src="roundLogo"
+                        :height="imgSize"
+                        :width="imgSize"
+                        contain
+                        alt="Logo"
+                    ></v-img>
+                </v-flex>
+            </v-layout>
 
-        <v-layout align-center justify-center row wrap class="section--big">
-            <v-flex xs12 md6 order-md2>
-                <div
-                    class="headline font-weight-bold headline-text text-center"
-                >
-                    Referral Incentives
-                </div>
-                <p class="text-center subheading" color="pink lighten-3">
-                    Get 20% off your next clean and get your friend 20% off.
-                </p>
-                <p class="text-center subheading" color="pink lighten-3">
-                    Get a free clean when you refer 3 friends.
-                </p>
-                <p class="text-center subheading" color="pink lighten-3">
-                    *Contact for more details.
-                </p>
-            </v-flex>
-            <v-flex xs12 md6 d-flex align-center justify-center>
-                <v-avatar :size="imgSize">
-                    <img :src="livingRoomImg" alt="Living room avatar" />
-                </v-avatar>
-            </v-flex>
-        </v-layout>
+            <v-layout align-center justify-center row wrap class="section--big">
+                <v-flex xs12 md6 order-md2>
+                    <div
+                        class="headline font-weight-bold headline-text text-center"
+                    >
+                        Referral Incentives
+                    </div>
+                    <p class="text-center subheading" color="pink lighten-3">
+                        Get 20% off your next clean and get your friend 20% off.
+                    </p>
+                    <p class="text-center subheading" color="pink lighten-3">
+                        Get a free clean when you refer 3 friends.
+                    </p>
+                    <p class="text-center subheading" color="pink lighten-3">
+                        *Contact for more details.
+                    </p>
+                </v-flex>
+                <v-flex xs12 md6 d-flex align-center justify-center>
+                    <v-avatar :size="imgSize">
+                        <img :src="livingRoomImg" alt="Living room avatar" />
+                    </v-avatar>
+                </v-flex>
+            </v-layout>
 
-        <v-layout align-center justify-center row wrap class="section--big">
-            <v-flex xs12 md6>
-                <div
-                    class="headline font-weight-bold headline-text text-center"
-                >
-                    Why Clean With Cooley
-                </div>
-                <v-list dense class="transparent">
-                    <v-list-item>
-                        <p class="list-text text-center subheading">
-                            Licensed, Insured &amp; Bonded
-                        </p>
-                    </v-list-item>
+            <v-layout align-center justify-center row wrap class="section--big">
+                <v-flex xs12 md6>
+                    <div
+                        class="headline font-weight-bold headline-text text-center"
+                    >
+                        Why Clean With Cooley
+                    </div>
+                    <v-list dense class="transparent">
+                        <v-list-item>
+                            <p class="list-text text-center subheading">
+                                Licensed, Insured &amp; Bonded
+                            </p>
+                        </v-list-item>
 
-                    <v-list-item>
-                        <p class="list-text text-center subheading">
-                            Background checked employees
-                        </p>
-                    </v-list-item>
+                        <v-list-item>
+                            <p class="list-text text-center subheading">
+                                Background checked employees
+                            </p>
+                        </v-list-item>
 
-                    <v-list-item>
-                        <p class="list-text text-center subheading">
-                            Eco friendly cleaning products
-                        </p>
-                    </v-list-item>
+                        <v-list-item>
+                            <p class="list-text text-center subheading">
+                                Eco friendly cleaning products
+                            </p>
+                        </v-list-item>
 
-                    <v-list-item>
-                        <p class="list-text text-center subheading">
-                            Professionally trained and great customer service
-                        </p>
-                    </v-list-item>
+                        <v-list-item>
+                            <p class="list-text text-center subheading">
+                                Professionally trained and great customer
+                                service
+                            </p>
+                        </v-list-item>
 
-                    <v-list-item>
-                        <p class="list-text text-center subheading">
-                            100% Satisfaction Guarantee
-                        </p>
-                    </v-list-item>
-                </v-list>
-            </v-flex>
-            <v-flex xs12 md6 d-flex align-center justify-center>
-                <v-img
-                    :src="bondedImg"
-                    :height="imgSize"
-                    :width="imgSize"
-                    contain
-                    alt="Bonded and Insured"
-                ></v-img>
-            </v-flex>
-        </v-layout>
+                        <v-list-item>
+                            <p class="list-text text-center subheading">
+                                100% Satisfaction Guarantee
+                            </p>
+                        </v-list-item>
+                    </v-list>
+                </v-flex>
+                <v-flex xs12 md6 d-flex align-center justify-center>
+                    <v-img
+                        :src="bondedImg"
+                        :height="imgSize"
+                        :width="imgSize"
+                        contain
+                        alt="Bonded and Insured"
+                    ></v-img>
+                </v-flex>
+            </v-layout>
+        </v-container>
     </div>
 </template>
 

@@ -1,33 +1,35 @@
 <template>
-    <v-layout align-center justify-center row wrap>
-        <v-flex v-for="(room, index) in rooms" :key="index" xs12>
-            <v-card color="included-section">
-                <v-layout align-center row wrap>
-                    <v-flex xs12 sm5>
-                        <v-img
-                            :src="room.img"
-                            :alt="room.alt"
-                            height="200px"
-                            contain
-                        ></v-img>
-                    </v-flex>
-                    <v-flex xs12 sm7>
-                        <v-card-title primary-title>
-                            <div class="title">
-                                {{ room.title }}
-                            </div>
-                        </v-card-title>
-                        <v-card-text>
-                            <p class="body-1">
-                                {{ room.text }}
-                            </p>
-                        </v-card-text>
-                    </v-flex>
-                </v-layout>
-            </v-card>
-        </v-flex>
-        <v-spacer></v-spacer>
-    </v-layout>
+    <v-container grid-list-lg>
+        <v-layout align-center justify-center row wrap>
+            <v-flex v-for="(room, index) in rooms" :key="index" xs12>
+                <v-card color="included-section">
+                    <v-layout align-center row wrap>
+                        <v-flex xs12 sm5>
+                            <v-img
+                                :src="room.img"
+                                :alt="room.alt"
+                                height="200px"
+                                contain
+                            ></v-img>
+                        </v-flex>
+                        <v-flex xs12 sm7>
+                            <v-card-title primary-title>
+                                <div class="title">
+                                    {{ room.title }}
+                                </div>
+                            </v-card-title>
+                            <v-card-text>
+                                <p class="body-1">
+                                    {{ room.text }}
+                                </p>
+                            </v-card-text>
+                        </v-flex>
+                    </v-layout>
+                </v-card>
+            </v-flex>
+            <v-spacer></v-spacer>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>
