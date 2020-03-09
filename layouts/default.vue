@@ -51,7 +51,7 @@ export default {
                     hid: 'keywords',
                     name: 'keywords',
                     content:
-                        'clean with cooley, cleaning with cooley, clean, cleaning, cooley, chicago, house cleaning service, cleaning service, chicago cleaner'
+                        'clean with cooley, cleaning with cooley, clean, cleaning, cooley, chicago, house cleaning service, cleaning service, chicago cleaner, clean service'
                 }
             ]
         }
