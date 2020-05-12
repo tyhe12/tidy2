@@ -6,7 +6,7 @@
                 <v-btn
                     v-for="icon in icons"
                     :key="icon.name"
-                    :to="icon.link"
+                    :href="icon.link"
                     class="mx-4"
                     icon
                 >

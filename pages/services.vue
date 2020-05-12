@@ -4,7 +4,7 @@
             <v-flex xs12>
                 <v-tabs
                     v-model="active"
-                    background-color="transparent"
+                    background-color="blue-grey lighten-5"
                     centered
                     grow
                     slider-color="pink lighten-3"

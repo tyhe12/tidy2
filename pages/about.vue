@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-layout align-center justify-center row wrap>
-            <v-flex xs12>
+            <v-flex xs12 class="mb-8">
                 <h2
                     class="about-title display-1 font-weight-light text-center text-uppercase"
                 >
