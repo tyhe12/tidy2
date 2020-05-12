@@ -1,70 +1,44 @@
 <template>
-    <v-footer color="pink lighten-3" height="auto">
-        <v-card
-            flat
-            tile
-            class="pink lighten-3 white--text footer__card--fullwidth"
-        >
-            <v-container fluid grid-list-xs>
-                <v-layout row wrap>
-                    <v-flex sm6 xs12>
-                        <v-card-title
-                            primary-title
-                            class="footer__content-title"
-                        >
-                            <h3 class="title mb-0">Navigate</h3>
-                        </v-card-title>
-
-                        <v-card-text class="footer__text--no-space-top">
-                            <v-list flat dense dark class="pink lighten-3">
-                                <v-list-item
-                                    v-for="item in items"
-                                    :key="item.title"
-                                    :to="item.link"
-                                    class="footer__navigate-item"
-                                >
-                                    <v-list-item-content
-                                        class="footer__navigate-item-content pt-1 pb-1"
-                                        >{{ item.title }}</v-list-item-content
-                                    >
-                                </v-list-item>
-                            </v-list>
-                        </v-card-text>
-                    </v-flex>
-
-                    <v-flex sm6 xs12>
-                        <v-card-title primary-title>
-                            <div class="footer__icon-title">
-                                <h3 class="title mb-0">
-                                    Connect With Me
-                                </h3>
-                            </div>
-                        </v-card-title>
-
-                        <v-card-text class="footer__connect--no-space-top">
-                            <v-btn
-                                v-for="(icon, idx) in icons"
-                                :key="idx"
-                                :href="icon.link"
-                                :aria-label="`Link to ${icon.name}`"
-                                class="mx-3 white--text"
-                                icon
-                            >
-                                <v-icon size="24px">{{ icon.icon }}</v-icon>
-                            </v-btn>
-                        </v-card-text>
-                    </v-flex>
-                </v-layout>
-            </v-container>
+    <v-footer color="primary" height="auto" padless>
+        <v-card dark flat tile width="100%" color="primary">
+            <v-img :src="logo" class="ma-8" height="100" contain> </v-img>
+            <v-card-text class="d-flex justify-center mb-4">
+                <v-btn
+                    v-for="icon in icons"
+                    :key="icon.name"
+                    :to="icon.link"
+                    class="mx-4"
+                    icon
+                >
+                    <v-icon size="24px">{{ icon.icon }}</v-icon>
+                </v-btn>
+            </v-card-text>
 
             <v-divider></v-divider>
+
+            <v-card-text
+                class="white--text d-flex align-center justify-space-between"
+            >
+                <div>
+                    <v-btn to="/privacy" link text>
+                        Privacy Policies
+                    </v-btn>
+                </div>
+                <div>
+                    {{ new Date().getFullYear() }} —
+                    <strong>Cleaning With Cooley</strong>
+                </div>
+            </v-card-text>
         </v-card>
     </v-footer>
 </template>
 
 <script>
+import RoundLogo from '../assets/img/logo_round.png'
+
 export default {
     data: () => ({
+        logo: RoundLogo,
         items: [
             { title: 'Home', icon: 'fas fa-home', link: '/' },
             { title: 'Who I Am', icon: 'fas fa-user-circle', link: '/about' },

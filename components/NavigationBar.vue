@@ -133,9 +133,9 @@ export default {
     cursor: pointer;
 }
 
-.link-title:hover {
-    color: $primary-color;
-}
+// .link-title:hover {
+//     color: $primary-color;
+// }
 
 .navigation__menu-list {
     padding-top: 0;

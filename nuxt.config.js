@@ -59,12 +59,12 @@ export default {
             themes: {
                 light: {
                     primary: '#F48FB1',
-                    accent: colors.grey.darken3,
-                    secondary: colors.amber.darken3,
-                    info: colors.teal.lighten1,
-                    warning: colors.amber.base,
-                    error: colors.deepOrange.accent4,
-                    success: colors.green.accent3
+                    secondary: '#00bcd4',
+                    accent: '#03a9f4',
+                    error: '#f44336',
+                    warning: '#ff5722',
+                    info: '#009688',
+                    success: '#4caf50'
                 }
             }
         },
