@@ -101,6 +101,11 @@ export default {
                 title: 'Move In/Out Clean',
                 price: 120,
                 subtitle: 'Prices vary with sizes'
+            },
+            {
+                title: 'Individual Room Clean',
+                price: 25,
+                subtitle: 'Prices vary with sizes'
             }
         ]
         const addons = [

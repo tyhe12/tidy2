@@ -116,8 +116,8 @@ export default {
             contact: [
                 {
                     icon: 'fas fa-phone',
-                    text: '708-308-8582',
-                    link: 'tel:708-308-8582'
+                    text: '708-261-2306',
+                    link: 'tel:708-261-2306'
                 },
                 {
                     icon: 'fas fa-envelope',

@@ -11,8 +11,8 @@
                 <v-text-field
                     v-model="title"
                     :rules="titleRules"
-                    name="Title"
-                    label="Title"
+                    name="Name"
+                    label="Name"
                 ></v-text-field>
 
                 <v-text-field

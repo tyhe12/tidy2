@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div v-resize="onResize" class="home">
         <section class="section--big">
             <v-row align="center">
                 <v-col class="mt-0 pt-0" cols="12">
@@ -32,100 +32,25 @@
                     </v-col>
 
                     <v-col cols="12">
-                        <v-row align="stretch">
-                            <v-col cols="12" md="4" class="pa-3 card-container">
-                                <v-card
-                                    class="mx-auto"
-                                    max-width="400"
-                                    height="320"
-                                >
-                                    <v-card-title>
-                                        <v-icon
-                                            color="primary"
-                                            large
-                                            left
-                                            class="mr-4"
-                                        >
-                                            fas fa-user-tie
-                                        </v-icon>
-                                        <span class="title font-weight-bold"
-                                            >Who We Are</span
-                                        >
-                                    </v-card-title>
-                                    <v-card-text class="subheading">
-                                        Cleaning with Cooley is a Chicago
-                                        Cleaning Service located in the downtown
-                                        Chicago area. We offer a wide range of
-                                        services to residential clients and
-                                        business owners, from general room
-                                        cleaning, office cleaning and much more!
-                                    </v-card-text>
-                                </v-card>
-                            </v-col>
-
-                            <v-col cols="12" md="4" class="pa-3 card-container">
-                                <v-card
-                                    class="mx-auto"
-                                    max-width="400"
-                                    height="320"
-                                >
-                                    <v-card-title>
-                                        <v-icon
-                                            color="primary"
-                                            large
-                                            left
-                                            class="mr-4"
-                                        >
-                                            fas fa-bullseye
-                                        </v-icon>
-                                        <span class="title font-weight-bold"
-                                            >Our Mission</span
-                                        >
-                                    </v-card-title>
-
-                                    <v-card-text class="subheading">
-                                        Our goal is to provide a clean and a
-                                        positive atmosphere in our clients’ home
-                                        by delivering world class customer
-                                        service and cleaning. We value open and
-                                        honest relationships with our clients
-                                        and love giving them a little time back
-                                        in their week to focus on their goals.
-                                        We want to always deliver the “Wow”
-                                        through our services.
-                                    </v-card-text>
-                                </v-card>
-                            </v-col>
-
-                            <v-col cols="12" md="4" class="pa-3 card-container">
-                                <v-card
-                                    class="mx-auto"
-                                    max-width="400"
-                                    height="320"
-                                >
-                                    <v-card-title>
-                                        <v-icon
-                                            color="primary"
-                                            large
-                                            left
-                                            class="mr-4"
-                                        >
-                                            fas fa-hand-sparkles
-                                        </v-icon>
-                                        <span class="title font-weight-bold"
-                                            >What We Do</span
-                                        >
-                                    </v-card-title>
-
-                                    <v-card-text class="subheading">
-                                        We tailored Our residential and
-                                        commercial cleaning service to make sure
-                                        every space - whether it’s a studio
-                                        apartment in Wicker Park, a brownstone
-                                        in Lincoln Park, or an office in The
-                                        Loop - is as beautiful as it can be.
-                                    </v-card-text>
-                                </v-card>
+                        <v-row align="stretch" align-content="center">
+                            <v-col
+                                v-for="(item, index) in summarySection"
+                                :key="index"
+                                cols="12"
+                                md="4"
+                                class="pa-3 card-container"
+                            >
+                                <v-row justify="center">
+                                    <simple-card
+                                        :height="isMedium ? 320 : 270"
+                                        :icon="item.icon"
+                                        :title="item.title"
+                                        class="mx-2"
+                                        max-width="400"
+                                    >
+                                        {{ item.text }}
+                                    </simple-card>
+                                </v-row>
                             </v-col>
                         </v-row>
                     </v-col>
@@ -144,139 +69,31 @@
                     </v-col>
 
                     <v-col cols="12">
-                        <v-row class="my-4" align="stretch" justify="center">
-                            <v-card
-                                class="card-container ma-4"
+                        <v-row
+                            v-for="(row, rowid) in benefitSection"
+                            :key="rowid"
+                            class="my-4"
+                            align="stretch"
+                            justify="center"
+                        >
+                            <simple-card
+                                v-for="(card, idx) in row"
+                                :key="idx"
+                                :icon="card.icon"
+                                :title="card.title"
+                                class="ma-4"
                                 max-width="400"
                                 height="100%"
                             >
-                                <v-card-title>
-                                    <v-icon
-                                        color="primary"
-                                        large
-                                        left
-                                        class="mr-4"
-                                    >
-                                        fas fa-leaf
-                                    </v-icon>
-                                    <span class="title font-weight-bold"
-                                        >Eco Friendly</span
-                                    >
-                                </v-card-title>
-
-                                <v-card-text class="subheading">
-                                    Our goal is to provide a clean and a
-                                    positive atmosphere in our clients’ home by
-                                    delivering world class customer service and
-                                    cleaning. We value open and honest
-                                    relationships with our clients and love
-                                    giving them a little time back in their week
-                                    to focus on their goals. We want to always
-                                    deliver the “Wow” through our services.
-                                </v-card-text>
-                            </v-card>
-
-                            <v-card
-                                class="card-container ma-4"
-                                max-width="400"
-                                height="100%"
-                            >
-                                <v-card-title>
-                                    <v-icon
-                                        color="primary"
-                                        large
-                                        left
-                                        class="mr-4"
-                                    >
-                                        fas fa-id-badge
-                                    </v-icon>
-                                    <span class="title font-weight-bold"
-                                        >Licensed, Insured &amp; Bonded</span
-                                    >
-                                </v-card-title>
-
-                                <v-card-text class="subheading">
-                                    Our goal is to provide a clean and a
-                                    positive atmosphere in our clients’ home by
-                                    delivering world class customer service and
-                                    cleaning. We value open and honest
-                                    relationships with our clients and love
-                                    giving them a little time back in their week
-                                    to focus on their goals. We want to always
-                                    deliver the “Wow” through our services.
-                                </v-card-text>
-                            </v-card>
-                        </v-row>
-
-                        <v-row class="my-4" align="stretch" justify="center">
-                            <v-card
-                                class="card-container ma-4"
-                                max-width="400"
-                                height="100%"
-                            >
-                                <v-card-title>
-                                    <v-icon
-                                        color="primary"
-                                        large
-                                        left
-                                        class="mr-4"
-                                    >
-                                        fas fa-smile
-                                    </v-icon>
-                                    <span class="title font-weight-bold"
-                                        >Great Customer Service</span
-                                    >
-                                </v-card-title>
-
-                                <v-card-text class="subheading">
-                                    Our goal is to provide a clean and a
-                                    positive atmosphere in our clients’ home by
-                                    delivering world class customer service and
-                                    cleaning. We value open and honest
-                                    relationships with our clients and love
-                                    giving them a little time back in their week
-                                    to focus on their goals. We want to always
-                                    deliver the “Wow” through our services.
-                                </v-card-text>
-                            </v-card>
-
-                            <v-card
-                                class="card-container ma-4"
-                                max-width="400"
-                                height="100%"
-                            >
-                                <v-card-title>
-                                    <v-icon
-                                        color="primary"
-                                        large
-                                        left
-                                        class="mr-4"
-                                    >
-                                        fas fa-thumbs-up
-                                    </v-icon>
-                                    <span class="title font-weight-bold"
-                                        >100% Satisfaction Guarantee
-                                    </span>
-                                </v-card-title>
-
-                                <v-card-text class="subheading">
-                                    Our goal is to provide a clean and a
-                                    positive atmosphere in our clients’ home by
-                                    delivering world class customer service and
-                                    cleaning. We value open and honest
-                                    relationships with our clients and love
-                                    giving them a little time back in their week
-                                    to focus on their goals. We want to always
-                                    deliver the “Wow” through our services.
-                                </v-card-text>
-                            </v-card>
+                                {{ card.text }}
+                            </simple-card>
                         </v-row>
                     </v-col>
                 </v-row>
             </v-container>
         </section>
 
-        <section class="section--big">
+        <!-- <section class="section--big">
             <v-layout class="py-8" align-center justify-center row wrap>
                 <v-flex xs12 md6 order-md2>
                     <div
@@ -300,19 +117,56 @@
                     </v-avatar>
                 </v-flex>
             </v-layout>
+        </section> -->
+
+        <section class="section--big">
+            <v-container>
+                <v-row align="stretch">
+                    <v-col
+                        cols="12"
+                        class="headline font-weight-bold headline-text text-center"
+                    >
+                        Cooley's Royalty Program
+                    </v-col>
+
+                    <v-col cols="12">
+                        <v-row align="stretch" align-content="center">
+                            <v-col
+                                v-for="(item, index) in royaltySection"
+                                :key="index"
+                                cols="12"
+                                md="4"
+                                class="pa-3 card-container"
+                            >
+                                <v-row justify="center">
+                                    <simple-card
+                                        :icon="item.icon"
+                                        :title="item.title"
+                                        height="100%"
+                                        class="mx-2"
+                                        max-width="400"
+                                    >
+                                        {{ item.text }}
+                                    </simple-card>
+                                </v-row>
+                            </v-col>
+                        </v-row>
+                    </v-col>
+                </v-row>
+            </v-container>
         </section>
 
         <section class="section--big">
             <v-row class="d-flex justify-center py-8">
-                <v-btn to="/services" large class="ma-8" color="primary"
+                <v-btn to="/services" large class="ma-8 px-8" color="primary"
                     >Check Out Our Services</v-btn
                 >
                 <v-btn
                     href="mailto:info@cleaningwithcooley.com"
                     large
-                    class="ma-8"
+                    class="ma-8 px-8"
                     color="primary"
-                    >Start Cleaning With Cooley</v-btn
+                    >Contact Us Today</v-btn
                 >
             </v-row>
         </section>
@@ -320,6 +174,7 @@
 </template>
 
 <script>
+import SimpleCard from '@/components/SimpleCard'
 import CarouselImage1 from '~/assets/img/carousel_1.jpg'
 import CarouselImage2 from '~/assets/img/carousel_2.jpg'
 import CarouselImage3 from '~/assets/img/carousel_3.jpg'
@@ -330,8 +185,15 @@ import LivingRoom from '~/assets/img/living.jpg'
 
 export default {
     scrollToTop: true,
+    components: {
+        SimpleCard
+    },
     data() {
         return {
+            windowSize: {
+                x: 0,
+                y: 0
+            },
             bondedImg: BondedImage,
             roundLogo: RoundLogo,
             livingRoomImg: LivingRoom,
@@ -349,6 +211,76 @@ export default {
                 {
                     src: CarouselImage4
                 }
+            ],
+            summarySection: [
+                {
+                    title: 'Who We Are',
+                    icon: 'fas fa-user-tie',
+                    text:
+                        'Cleaning with Cooley is a Chicago Cleaning Service located in the downtown Chicago area. We offer a wide range of services to residential clients and business owners, from general room cleaning, office cleaning and much more!'
+                },
+                {
+                    title: 'Our Mission',
+                    icon: 'fas fa-bullseye',
+                    text:
+                        'Our goal is to provide a clean and a positive atmosphere in our clients’ home by delivering world class customer service and cleaning. We value open and honest relationships with our clients and love giving them a little time back in their week to focus on their goals. We want to always deliver the “Wow” through our services.'
+                },
+                {
+                    title: 'What We Do',
+                    icon: 'fas fa-hand-sparkles',
+                    text:
+                        'We tailored our residential and commercial cleaning service to make sure every space - whether it’s a studio apartment in Wicker Park, a brownstone in Lincoln Park, or an office in The Loop - is as beautiful as it can be with complete satisfaction!'
+                }
+            ],
+            benefitSection: [
+                [
+                    {
+                        title: 'Eco Friendly',
+                        icon: 'fas fa-leaf',
+                        text:
+                            'We offer Eco-friendly house cleaning products that don’t contain harsh nor harmful chemicals.  We always want to help you maintain a clean & healthy home.'
+                    },
+                    {
+                        title: 'Licensed, Insured & Bonded',
+                        icon: 'fas fa-shield-alt',
+                        text:
+                            'Cleaning with Cooley is fully Licensed, Bonded & Insured to protect your home and give you a piece of mind.'
+                    }
+                ],
+                [
+                    {
+                        title: 'Great Customer Service',
+                        icon: 'fas fa-smile',
+                        text:
+                            'Our #1 goal is to deliver world class customers service to our clients. We provide exceptional training to all our professional housekeepers/cleaners.  All our employees undergo a back ground check because we value open and honest relationships with our clients. We always want to provide a clean and positive atmosphere in our clients’ home!'
+                    },
+                    {
+                        title: '100% Satisfaction Guarantee',
+                        icon: 'fas fa-thumbs-up',
+                        text:
+                            'It’s rare to find a company that stands behind its work. If for any reason you’re not satisfied with our work let us know within 48 hours and we will return to re-clean any of the areas missed free of charge!  Our goal is to always put you and your home first.'
+                    }
+                ]
+            ],
+            royaltySection: [
+                {
+                    title: 'New Customer',
+                    icon: 'fas fa-broom',
+                    text:
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                },
+                {
+                    title: 'Referral Incentives',
+                    icon: 'fas fa-user-friends',
+                    text:
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                },
+                {
+                    title: 'Discounted Cleaning',
+                    icon: 'fas fa-tags',
+                    text:
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                }
             ]
         }
     },
@@ -364,13 +296,26 @@ export default {
                 }
             ]
         }
+    },
+    computed: {
+        isMedium() {
+            return this.windowSize.x > 960 && this.windowSize.x < 1264
+        }
+    },
+    mounted() {
+        this.onResize()
+    },
+    methods: {
+        onResize() {
+            this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-// .section--gray {
-//     background-color: ;
+// .home-large-botton {
+//     font-size: ;
 // }
 
 .v-carousel--reveal {
@@ -404,9 +349,5 @@ export default {
 
 .list-text {
     width: 100%;
-}
-
-.card-container {
-    height: 100%;
 }
 </style>

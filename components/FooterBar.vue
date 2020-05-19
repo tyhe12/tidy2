@@ -21,12 +21,12 @@
             >
                 <div>
                     <v-btn to="/privacy" link text>
-                        Privacy Policies
+                        Privacy Policy
                     </v-btn>
                 </div>
                 <div>
-                    {{ new Date().getFullYear() }} —
-                    <strong>Cleaning With Cooley</strong>
+                    Copyright &copy; 2018-{{ new Date().getFullYear() }},
+                    Cleaning with Cooley. All Rights Reserved.
                 </div>
             </v-card-text>
         </v-card>
@@ -75,7 +75,7 @@ export default {
             {
                 name: 'Phone',
                 icon: 'fas fa-phone',
-                link: 'tel:708-308-8582'
+                link: 'tel:708-261-2306'
             },
             {
                 name: 'Email',
