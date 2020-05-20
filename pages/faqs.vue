@@ -121,6 +121,17 @@ export default {
                     'Can I provide my housekeeper with special instructions?',
                 text:
                     'Yes, your preference gives us the structure we need to enhance your cleaning experience and it also ensure that you’re completely happy & satisfied.'
+            },
+            {
+                title:
+                    'During periods of rain or heavy snow fall, do you still clean?',
+                text:
+                    'Yes, we make every effort to come clean your home during the heavy snowfall and/or rain. If for any reason we do need to cancel we will definitely reschedule your appointment.'
+            },
+            {
+                title: 'What training does your staff go through?',
+                text:
+                    'Cleaning with Cooley staff undergo both classroom training as well as on the job training. Our employees not only learn how to clean properly but our #1 priority is having customer service skills as well.'
             }
         ]
     }),

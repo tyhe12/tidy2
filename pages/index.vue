@@ -126,7 +126,7 @@
                         cols="12"
                         class="headline font-weight-bold headline-text text-center"
                     >
-                        Cooley's Royalty Program
+                        Royalty Program
                     </v-col>
 
                     <v-col cols="12">
@@ -142,11 +142,17 @@
                                     <simple-card
                                         :icon="item.icon"
                                         :title="item.title"
-                                        height="100%"
+                                        :height="isMedium ? 300 : 250"
                                         class="mx-2"
                                         max-width="400"
                                     >
-                                        {{ item.text }}
+                                        <div
+                                            v-for="(section, id) in item.text"
+                                            :key="id"
+                                            :class="id === 0 ? '' : 'pt-3'"
+                                        >
+                                            {{ section }}
+                                        </div>
                                     </simple-card>
                                 </v-row>
                             </v-col>
@@ -265,21 +271,29 @@ export default {
             royaltySection: [
                 {
                     title: 'New Customer',
-                    icon: 'fas fa-broom',
-                    text:
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                    icon: 'fas fa-gift',
+                    text: [
+                        'We love to welcome new clients with open arms! So we have a couple options that’ll catch your eye!',
+                        'Get 20% off your first clean.',
+                        'Like our service, come back for a 2nd clean and get your refrigerator or stove clean for free!'
+                    ]
                 },
                 {
                     title: 'Referral Incentives',
                     icon: 'fas fa-user-friends',
-                    text:
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                    text: [
+                        'We value all our clients and want to show our appreciation! All you have to do is refer someone to our services and you’ll receive 25% off your next clean following your referral clean. And the referral will receive 20% off their 1st clean!',
+                        '*Contact us for more details.'
+                    ]
                 },
                 {
-                    title: 'Discounted Cleaning',
-                    icon: 'fas fa-tags',
-                    text:
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+                    title: 'Free Clean',
+                    icon: 'fas fa-broom',
+                    text: [
+                        'Everyone love something for free right?',
+                        'Refer 3 friends, family, neighbor or colleagues for a clean and you’ll get your next clean for free following your referral cleans!',
+                        '*Contact us for more details.'
+                    ]
                 }
             ]
         }
