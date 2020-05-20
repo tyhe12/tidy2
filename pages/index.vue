@@ -131,27 +131,92 @@
 
                     <v-col cols="12">
                         <v-row align="stretch" align-content="center">
-                            <v-col
-                                v-for="(item, index) in royaltySection"
-                                :key="index"
-                                cols="12"
-                                md="4"
-                                class="pa-3 card-container"
-                            >
+                            <v-col cols="12" md="4" class="pa-3 card-container">
                                 <v-row justify="center">
                                     <simple-card
-                                        :icon="item.icon"
-                                        :title="item.title"
-                                        :height="isMedium ? 300 : 250"
+                                        :height="isMedium ? 330 : 280"
+                                        icon="fas fa-gift"
+                                        title="New Customer"
                                         class="mx-2"
                                         max-width="400"
                                     >
+                                        <div>
+                                            We love to welcome new clients with
+                                            open arms. So we have a few options
+                                            that will capture your attention!
+                                            <ul>
+                                                <li>
+                                                    Get 20% off your 1st Initial
+                                                    Clean.
+                                                </li>
+                                                <li>
+                                                    Book a 2nd clean with us and
+                                                    we’ll throw in a
+                                                    refrigerator or stove
+                                                    cleaning free of charge!
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </simple-card>
+                                </v-row>
+                            </v-col>
+
+                            <v-col cols="12" md="4" class="pa-3 card-container">
+                                <v-row justify="center">
+                                    <simple-card
+                                        :height="isMedium ? 330 : 280"
+                                        icon="fas fa-user-friends"
+                                        title="Referral Incentives"
+                                        class="mx-2"
+                                        max-width="400"
+                                    >
+                                        <div>
+                                            We value all our clients and want to
+                                            show our appreciation! Refer someone
+                                            to our services and you’ll receive
+                                            25% off your next clean (following
+                                            your referral clean). Your referral
+                                            will receive 20% off their 1st
+                                            initial clean!
+                                        </div>
                                         <div
-                                            v-for="(section, id) in item.text"
-                                            :key="id"
-                                            :class="id === 0 ? '' : 'pt-3'"
+                                            class="mt-3 caption font-italic font-weight-medium"
                                         >
-                                            {{ section }}
+                                            *Contact us for more details.
+                                        </div>
+                                    </simple-card>
+                                </v-row>
+                            </v-col>
+
+                            <v-col cols="12" md="4" class="pa-3 card-container">
+                                <v-row justify="center">
+                                    <simple-card
+                                        :height="isMedium ? 330 : 280"
+                                        icon="fas fa-broom"
+                                        title="Free Clean"
+                                        class="mx-2"
+                                        max-width="400"
+                                    >
+                                        <div>
+                                            Refer 3 friends, family, neighbor or
+                                            colleagues for a clean and you’ll
+                                            get your next clean for free
+                                            (following your referral clean).
+                                            <ul>
+                                                <li>
+                                                    Just an added VIP Bonus - if
+                                                    all 3 of your referrals sign
+                                                    on for reoccurring cleans
+                                                    you’ll receive a free
+                                                    refrigerator or oven
+                                                    cleaning monthly!
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div
+                                            class="mt-3 caption font-italic font-weight-medium"
+                                        >
+                                            *Contact us for more details
                                         </div>
                                     </simple-card>
                                 </v-row>
@@ -267,34 +332,6 @@ export default {
                             'It’s rare to find a company that stands behind its work. If for any reason you’re not satisfied with our work let us know within 48 hours and we will return to re-clean any of the areas missed free of charge!  Our goal is to always put you and your home first.'
                     }
                 ]
-            ],
-            royaltySection: [
-                {
-                    title: 'New Customer',
-                    icon: 'fas fa-gift',
-                    text: [
-                        'We love to welcome new clients with open arms! So we have a couple options that’ll catch your eye!',
-                        'Get 20% off your first clean.',
-                        'Like our service, come back for a 2nd clean and get your refrigerator or stove clean for free!'
-                    ]
-                },
-                {
-                    title: 'Referral Incentives',
-                    icon: 'fas fa-user-friends',
-                    text: [
-                        'We value all our clients and want to show our appreciation! All you have to do is refer someone to our services and you’ll receive 25% off your next clean following your referral clean. And the referral will receive 20% off their 1st clean!',
-                        '*Contact us for more details.'
-                    ]
-                },
-                {
-                    title: 'Free Clean',
-                    icon: 'fas fa-broom',
-                    text: [
-                        'Everyone love something for free right?',
-                        'Refer 3 friends, family, neighbor or colleagues for a clean and you’ll get your next clean for free following your referral cleans!',
-                        '*Contact us for more details.'
-                    ]
-                }
             ]
         }
     },
