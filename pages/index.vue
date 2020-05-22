@@ -179,11 +179,6 @@
                                             will receive 20% off their 1st
                                             initial clean!
                                         </div>
-                                        <div
-                                            class="mt-3 caption font-italic font-weight-medium"
-                                        >
-                                            *Contact us for more details.
-                                        </div>
                                     </simple-card>
                                 </v-row>
                             </v-col>
@@ -212,11 +207,6 @@
                                                     cleaning monthly!
                                                 </li>
                                             </ul>
-                                        </div>
-                                        <div
-                                            class="mt-3 caption font-italic font-weight-medium"
-                                        >
-                                            *Contact us for more details
                                         </div>
                                     </simple-card>
                                 </v-row>
