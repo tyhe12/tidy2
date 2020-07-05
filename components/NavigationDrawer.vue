@@ -77,13 +77,13 @@ export default {
             show: this.drawer,
             items: [
                 {
-                    title: 'Who I Am',
-                    icon: 'fas fa-user-circle',
+                    title: 'About',
+                    icon: 'fas fa-user',
                     link: '/about',
                     label: 'More about me'
                 },
                 {
-                    title: 'My Services',
+                    title: 'Our Services',
                     icon: 'fas fa-tags',
                     link: '/services',
                     label: 'More about our services'

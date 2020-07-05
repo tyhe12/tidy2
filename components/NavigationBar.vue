@@ -26,7 +26,7 @@
                 to="/about"
                 aria-label="More about me"
             >
-                Who I Am
+                About
             </v-btn>
 
             <v-btn
@@ -37,7 +37,7 @@
                 to="/services"
                 aria-label="More about services we offer"
             >
-                My Services
+                Our Services
             </v-btn>
 
             <v-menu
@@ -81,13 +81,69 @@
                 </v-list>
             </v-menu>
         </v-toolbar-items>
+        <v-toolbar-items>
+            <v-menu
+                :close-on-content-click="false"
+                open-on-hover
+                bottom
+                left
+                transition="slide-y-transition"
+                nudge-bottom="64"
+            >
+                <template v-slot:activator="{ on }">
+                    <v-btn
+                        v-on="on"
+                        to="/login"
+                        class="link"
+                        text
+                        tile
+                        large
+                        aria-label="Dashboard"
+                    >
+                        <v-icon>fas fa-user-circle</v-icon>
+                    </v-btn>
+                </template>
+
+                <div v-if="!signedIn" class="login-menu pa-4">
+                    <login-widget v-if="!signedIn" />
+                </div>
+                <div v-else>
+                    <v-list dense class="navigation__menu-list">
+                        <v-list-item class="navigation__menu-list-item">
+                            <v-btn aria-label="hello" text tile large>
+                                Hello, {{ firstName }}
+                            </v-btn>
+                        </v-list-item>
+                        <v-list-item class="navigation__menu-list-item">
+                            <logout-widget />
+                        </v-list-item>
+                    </v-list>
+                </div>
+            </v-menu>
+        </v-toolbar-items>
     </v-app-bar>
 </template>
 
 <script>
 import Logo from '../assets/img/logo_main.png'
+import LoginWidget from './LoginWidget'
+import LogoutWidget from './LogoutWidget'
 
 export default {
+    components: {
+        LoginWidget,
+        LogoutWidget
+    },
+    props: {
+        user: {
+            type: Object,
+            required: true
+        },
+        signedIn: {
+            type: Boolean,
+            default: false
+        }
+    },
     data: () => ({
         logo: Logo,
         menu: [
@@ -109,6 +165,14 @@ export default {
             }
         ]
     }),
+    computed: {
+        name() {
+            return this.signedIn ? this.user.attributes.name : ''
+        },
+        firstName() {
+            return this.name.split(' ')[0]
+        }
+    },
     methods: {
         iconClickHandler() {
             this.$emit('click:icon')
@@ -118,12 +182,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .link:hover {
-//     &::before {
-//         background: none;
-//     }
-//     color: $primary-color;
-// }
+.login-menu {
+    background-color: white;
+    width: 300px;
+}
 
 .link-menu {
     width: 100%;
@@ -132,10 +194,6 @@ export default {
 .link-title {
     cursor: pointer;
 }
-
-// .link-title:hover {
-//     color: $primary-color;
-// }
 
 .navigation__menu-list {
     padding-top: 0;

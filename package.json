@@ -16,12 +16,16 @@
     "deploy:prod": "NODE_ENV=production yarn empty && vue-cli-service s3-deploy --mode production"
   },
   "dependencies": {
+    "@aws-amplify/ui-vue": "^0.2.7",
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/google-gtag": "^1.0.4",
     "@nuxtjs/sitemap": "^2.0.1",
+    "aws-amplify": "^3.0.17",
+    "aws-amplify-vue": "^2.1.1",
     "dotenv": "^8.1.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vee-validate": "^3.3.4"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",

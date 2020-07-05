@@ -1,6 +1,11 @@
 <template>
     <v-app class="app">
-        <navigation-bar @click:icon="clickIconHandler" app />
+        <navigation-bar
+            :user="user"
+            :signed-in="signedIn"
+            @click:icon="clickIconHandler"
+            app
+        />
 
         <navigation-drawer :drawer.sync="drawer" app />
 
@@ -13,6 +18,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import NavigationBar from '~/components/NavigationBar.vue'
 import FooterBar from '~/components/FooterBar.vue'
 import NavigationDrawer from '~/components/NavigationDrawer.vue'
@@ -26,14 +32,26 @@ export default {
     data: () => ({
         drawer: false
     }),
+    computed: {
+        ...mapGetters({
+            user: 'user/user',
+            signedIn: 'user/signedIn'
+        })
+    },
+    mounted() {
+        if (!this.signedIn) {
+            this.loadUser()
+        }
+    },
     methods: {
+        ...mapActions('user', ['loadUser']),
         clickIconHandler() {
             this.drawer = !this.drawer
         }
     },
     head() {
         return {
-            titleTemplate: '%s | ' + process.env.PROJECT_NAME,
+            titleTemplate: `%s - ${process.env.PROJECT_NAME}`,
             title: process.env.PROJECT_NAME,
             meta: [
                 { charset: 'utf-8' },
