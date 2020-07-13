@@ -18,6 +18,12 @@
 
             <v-row>
                 <v-col cols="12">
+                    <social-login />
+                </v-col>
+            </v-row>
+
+            <v-row>
+                <v-col cols="12">
                     <p>
                         <nuxt-link to="recover">Forgot password?</nuxt-link>
                     </p>
@@ -44,11 +50,13 @@
 import { mapGetters } from 'vuex'
 import LoginWidget from '~/components/LoginWidget'
 import LogoutWidget from '~/components/LogoutWidget'
+import SocialLogin from '~/components/SocialLogin'
 
 export default {
     components: {
         LoginWidget,
-        LogoutWidget
+        LogoutWidget,
+        SocialLogin
     },
     computed: {
         ...mapGetters({

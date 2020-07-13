@@ -18,9 +18,16 @@ export const actions = {
         const reviews = await axios.get(process.env.reviewsUrl)
         commit('set', reviews.data)
     },
-    async add({ commit }, review) {
+    async add({ commit }, { review, token }) {
         commit('add', review)
-        await axios.post(process.env.reviewsUrl, review)
+        await axios({
+            method: 'post',
+            url: process.env.reviewsUrl,
+            headers: {
+                Authorization: token
+            },
+            data: review
+        })
     }
 }
 

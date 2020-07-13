@@ -1,80 +1,90 @@
 <template>
     <v-card class="review-form">
         <v-card-text>
-            <v-form ref="form">
-                <legend class="review-form__legend">
-                    <h3 class="title mb-0">
-                        Please leave us a review
-                    </h3>
-                </legend>
+            <validation-observer ref="observer-review" v-slot="{ invalid }">
+                <v-form ref="form">
+                    <legend class="review-form__legend">
+                        <h3 class="title mb-0">
+                            Please leave us a review
+                        </h3>
+                    </legend>
 
-                <v-text-field
-                    v-model="title"
-                    :rules="titleRules"
-                    name="Name"
-                    label="Name"
-                ></v-text-field>
+                    <validation-provider
+                        v-slot="{ errors }"
+                        name="title"
+                        rules="required"
+                    >
+                        <v-text-field
+                            v-model="title"
+                            :error-messages="errors"
+                            name="Title"
+                            label="Title"
+                        ></v-text-field>
+                    </validation-provider>
 
-                <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    name="Email"
-                    label="Email"
-                ></v-text-field>
+                    <validation-provider
+                        v-slot="{ errors }"
+                        name="review"
+                        rules="required"
+                    >
+                        <v-textarea
+                            v-model="review"
+                            :error-messages="errors"
+                            name="Review"
+                            label="Please leave your comments here"
+                            hint="Please tell us what you think to help us get better"
+                        ></v-textarea>
+                    </validation-provider>
 
-                <v-textarea
-                    v-model="review"
-                    :rules="reviewRules"
-                    name="Review"
-                    label="Please leave your comments here"
-                    hint="Please tell us what you think to help us get better"
-                ></v-textarea>
+                    <star-rating
+                        v-model="rating"
+                        background-color="pink lighten-3"
+                        color="pink"
+                        centered
+                    ></star-rating>
 
-                <star-rating
-                    v-model="rating"
-                    background-color="pink lighten-3"
-                    color="pink"
-                    centered
-                ></star-rating>
-
-                <v-btn @click="submit" color="primary" aria-label="Submit">
-                    Submit
-                </v-btn>
-            </v-form>
+                    <v-btn
+                        @click="submit"
+                        :disabled="!loggedIn || invalid"
+                        color="primary"
+                        aria-label="Submit"
+                    >
+                        Submit
+                    </v-btn>
+                </v-form>
+            </validation-observer>
         </v-card-text>
     </v-card>
 </template>
 
 <script>
+import { ValidationObserver, ValidationProvider } from 'vee-validate'
 import StarRating from './StarRating.vue'
 
 export default {
     components: {
-        StarRating
+        StarRating,
+        ValidationObserver,
+        ValidationProvider
+    },
+    props: {
+        user: {
+            type: Object,
+            default: () => ({})
+        },
+        loggedIn: {
+            type: Boolean,
+            default: false
+        }
     },
     data: () => {
-        const rating = 0
+        const rating = 5
         const title = null
         const review = null
-        const email = null
         return {
             title,
-            titleRules: [
-                (v) => !!v || 'A title is needed',
-                (v) =>
-                    (v && v.length <= 50) || 'Please be a little more concise'
-            ],
             review,
-            reviewRules: [(v) => !!v || 'Review is required'],
-            rating,
-            email,
-            emailRules: [
-                (v) => !!v || 'Please enter an email',
-                (v) =>
-                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-                        String(v).toLowerCase()
-                    ) || 'Please enter a valid email'
-            ]
+            rating
         }
     },
     methods: {

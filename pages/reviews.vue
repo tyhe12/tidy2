@@ -1,7 +1,7 @@
 <template>
     <v-container grid-list-lg class="reviews">
-        <v-layout align-center justify-center row wrap>
-            <v-flex xs12 class="d-flex justify-end">
+        <v-row align-center justify-center>
+            <v-col cols="12" class="d-flex justify-end">
                 <v-btn
                     @click="$vuetify.goTo(target, options)"
                     class="write-review-button"
@@ -10,13 +10,13 @@
                 >
                     Write a Review
                 </v-btn>
-            </v-flex>
+            </v-col>
 
-            <v-flex v-for="(review, index) in reviews" :key="index" xs12>
+            <v-col v-for="(review, index) in reviews" :key="index" cols="12">
                 <review-card :rating="review.rating" :title="review.title">
                     {{ review.review }}
                 </review-card>
-            </v-flex>
+            </v-col>
 
             <v-container v-if="loading">
                 <v-skeleton-loader
@@ -28,13 +28,23 @@
                 ></v-skeleton-loader>
             </v-container>
 
-            <v-flex xs12>
+            <v-col cols="12">
                 <review-form
                     id="review-form"
+                    :user="user"
+                    :loggedIn="signedIn"
                     @submit="submitHandler"
                 ></review-form>
-            </v-flex>
-        </v-layout>
+            </v-col>
+
+            <v-col cols="12">
+                <div v-if="!signedIn" class="alert__info">
+                    <v-alert type="info">
+                        Please log in to leave us a review
+                    </v-alert>
+                </div>
+            </v-col>
+        </v-row>
         <v-snackbar
             v-model="showAlert"
             :timeout="timeout"
@@ -69,7 +79,10 @@ export default {
     computed: {
         ...mapGetters({
             reviews: 'reviews/reviews',
-            reviewsCount: 'reviews/count'
+            reviewsCount: 'reviews/count',
+            user: 'user/user',
+            signedIn: 'user/signedIn',
+            token: 'user/token'
         }),
         loading() {
             return this.reviewsCount === 0
@@ -86,7 +99,10 @@ export default {
     },
     methods: {
         submitHandler(review) {
-            this.$store.dispatch('reviews/add', review)
+            this.$store.dispatch('reviews/add', {
+                review,
+                token: this.token
+            })
             this.showAlert = true
         }
     },

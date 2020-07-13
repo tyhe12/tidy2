@@ -41,8 +41,8 @@ export default {
      ** Nuxt.js modules
      */
     modules: [
-        // Doc: https://axios.nuxtjs.org/usage
         '@nuxtjs/axios',
+        '@nuxtjs/auth',
         '@nuxtjs/google-gtag',
         '@nuxtjs/sitemap'
     ],
@@ -93,6 +93,17 @@ export default {
     },
     env: {
         reviewsUrl: process.env.API_REVIEWS
+    },
+    auth: {
+        strategies: {
+            facebook: {
+                client_id: '1622772391204199'
+            },
+            google: {
+                client_id:
+                    '665965630767-s95ma00tu5b95pvc2c6hq73q8dpu5hml.apps.googleusercontent.com'
+            }
+        }
     },
     sitemap: {
         hostname: 'https://cleaningwithcooley.com',

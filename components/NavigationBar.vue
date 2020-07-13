@@ -106,6 +106,9 @@
 
                 <div v-if="!signedIn" class="login-menu pa-4">
                     <login-widget v-if="!signedIn" />
+                    <v-btn class="mt-2" to="/login" text color="primary"
+                        >Login with Social Account</v-btn
+                    >
                 </div>
                 <div v-else>
                     <v-list dense class="navigation__menu-list">
@@ -167,7 +170,7 @@ export default {
     }),
     computed: {
         name() {
-            return this.signedIn ? this.user.attributes.name : ''
+            return this.signedIn ? this.user.name : ''
         },
         firstName() {
             return this.name.split(' ')[0]
