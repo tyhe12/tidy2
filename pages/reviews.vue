@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import ReviewCard from '../components/ReviewCard.vue'
 import ReviewForm from '../components/ReviewForm.vue'
 
@@ -94,12 +94,16 @@ export default {
     created() {
         // seems like a hack
         if (!this.reviewsCount) {
-            this.$store.dispatch('reviews/load')
+            this.loadReview()
         }
     },
     methods: {
+        ...mapActions('reviews', {
+            addReview: 'add',
+            loadReview: 'load'
+        }),
         submitHandler(review) {
-            this.$store.dispatch('reviews/add', {
+            this.addReview({
                 review,
                 token: this.token
             })

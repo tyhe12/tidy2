@@ -35,16 +35,21 @@ export default {
     computed: {
         ...mapGetters({
             user: 'user/user',
-            signedIn: 'user/signedIn'
+            signedIn: 'user/signedIn',
+            first: 'globals/firstload'
         })
     },
     mounted() {
-        if (!this.signedIn) {
-            this.loadUser()
+        if (this.first) {
+            if (!this.signedIn) {
+                this.loadUser()
+            }
+            this.firstload()
         }
     },
     methods: {
         ...mapActions('user', ['loadUser']),
+        ...mapActions('globals', ['firstload']),
         clickIconHandler() {
             this.drawer = !this.drawer
         }

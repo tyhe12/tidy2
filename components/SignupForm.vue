@@ -130,6 +130,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import { Auth } from 'aws-amplify'
 import { ValidationObserver, ValidationProvider } from 'vee-validate'
 import '@/mixins/validators'
@@ -154,6 +155,7 @@ export default {
         errorMessage: ''
     }),
     methods: {
+        ...mapActions('user', ['signIn']),
         async signup() {
             this.error = false
             try {
@@ -176,7 +178,7 @@ export default {
             this.error = false
             try {
                 await Auth.confirmSignUp(this.email, this.code)
-                this.$store.dispatch('user/signIn', {
+                this.signIn({
                     email: this.email,
                     password: this.password
                 })

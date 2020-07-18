@@ -93,7 +93,7 @@
                 <template v-slot:activator="{ on }">
                     <v-btn
                         v-on="on"
-                        to="/login"
+                        :to="signedIn ? '/dashboard' : '/login'"
                         class="link"
                         text
                         tile
@@ -115,6 +115,18 @@
                         <v-list-item class="navigation__menu-list-item">
                             <v-btn aria-label="hello" text tile large>
                                 Hello, {{ firstName }}
+                            </v-btn>
+                        </v-list-item>
+                        <v-list-item class="navigation__menu-list-item">
+                            <v-btn
+                                class="link link-menu"
+                                aria-label="dashboard"
+                                to="/dashboard"
+                                text
+                                tile
+                                large
+                            >
+                                Dashboard
                             </v-btn>
                         </v-list-item>
                         <v-list-item class="navigation__menu-list-item">

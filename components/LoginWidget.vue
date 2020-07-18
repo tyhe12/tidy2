@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import { ValidationObserver, ValidationProvider } from 'vee-validate'
 import '@/mixins/validators'
 
@@ -70,10 +71,11 @@ export default {
         show: false
     }),
     methods: {
+        ...mapActions('user', ['signIn']),
         async login() {
             this.error = false
             try {
-                await this.$store.dispatch('user/signIn', {
+                await this.signIn({
                     email: this.email,
                     password: this.password
                 })

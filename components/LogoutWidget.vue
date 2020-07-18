@@ -5,10 +5,12 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
     methods: {
+        ...mapActions('user', ['signOut']),
         async logout() {
-            await this.$store.dispatch('user/signOut')
+            await this.signOut()
         }
     }
 }
