@@ -92,7 +92,9 @@ export default {
         id: process.env.GOOGLE_ANALYTICS_ID
     },
     env: {
-        reviewsUrl: process.env.API_REVIEWS
+        reviewsUrl: `${process.env.API_URL}\\reviews`,
+        usersUrl: `${process.env.API_URL}\\users`,
+        cleansUrl: `${process.env.API_URL}\\cleans`
     },
     auth: {
         strategies: {

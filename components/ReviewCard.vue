@@ -4,6 +4,9 @@
             <v-layout align-center row wrap class="review-title">
                 <v-flex xs12 sm6>
                     <h3 class="title mb-0">{{ title }}</h3>
+                    <h4 class="caption font-weight-light">
+                        {{ date.toLocaleDateString() }}
+                    </h4>
                 </v-flex>
                 <v-flex xs12 sm6>
                     <star-rating
@@ -37,6 +40,10 @@ export default {
         title: {
             type: String,
             default: ''
+        },
+        date: {
+            type: Date,
+            default: () => new Date()
         }
     }
 }

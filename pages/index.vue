@@ -152,7 +152,7 @@
                                                 <li>
                                                     Book a 2nd clean with us and
                                                     we’ll throw in a
-                                                    refrigerator or stove
+                                                    refrigerator or oven
                                                     cleaning free of charge!
                                                 </li>
                                             </ul>
@@ -235,6 +235,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import SimpleCard from '@/components/SimpleCard'
 import CarouselImage1 from '~/assets/img/carousel_1.jpg'
 import CarouselImage2 from '~/assets/img/carousel_2.jpg'
@@ -339,14 +340,22 @@ export default {
         }
     },
     computed: {
+        ...mapGetters({
+            user: 'user/user',
+            signedIn: 'user/signedIn'
+        }),
         isMedium() {
             return this.windowSize.x > 960 && this.windowSize.x < 1264
         }
     },
     mounted() {
         this.onResize()
+        if (!this.signedIn) {
+            this.loadUser()
+        }
     },
     methods: {
+        ...mapActions('user', ['loadUser']),
         onResize() {
             this.windowSize = { x: window.innerWidth, y: window.innerHeight }
         }
@@ -355,10 +364,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .home-large-botton {
-//     font-size: ;
-// }
-
 .v-carousel--reveal {
     display: flex;
     align-items: center;

@@ -98,6 +98,7 @@
                 You should have received your confirmation code in an e-mail
                 from us, please check your inbox and enter your code here.
             </v-alert>
+
             <validation-observer ref="observer-confirm" v-slot="{ invalid }">
                 <v-form ref="form" v-model="valid">
                     <validation-provider
@@ -117,6 +118,15 @@
 
                     <v-btn
                         :disabled="invalid"
+                        @click="resend"
+                        color="primary"
+                        class="mt-4"
+                    >
+                        Resend Code
+                    </v-btn>
+
+                    <v-btn
+                        :disabled="invalid"
                         @click="confirm"
                         color="primary"
                         class="mt-4"
@@ -125,6 +135,16 @@
                     </v-btn>
                 </v-form>
             </validation-observer>
+            <v-snackbar
+                v-model="resent"
+                timeout="5000"
+                bottom
+                color="primary"
+                class="title"
+            >
+                We have resent your confirmation code in the e-mail you have
+                provided, please check your inbox.
+            </v-snackbar>
         </div>
     </div>
 </template>
@@ -152,20 +172,17 @@ export default {
         confirmed: false,
         user: {},
         error: false,
-        errorMessage: ''
+        errorMessage: '',
+        resent: false
     }),
     methods: {
-        ...mapActions('user', ['signIn']),
+        ...mapActions('user', ['signIn', 'signUp']),
         async signup() {
             this.error = false
             try {
-                this.user = await Auth.signUp({
+                this.user = await this.signUp({
                     username: this.email,
-                    password: this.password,
-                    attributes: {
-                        email: this.email,
-                        name: this.name
-                    }
+                    password: this.password
                 })
                 this.signedup = true
             } catch (err) {
@@ -178,7 +195,7 @@ export default {
             this.error = false
             try {
                 await Auth.confirmSignUp(this.email, this.code)
-                this.signIn({
+                await this.signIn({
                     email: this.email,
                     password: this.password
                 })
@@ -187,6 +204,16 @@ export default {
                 this.error = true
                 this.errorMessage =
                     'We cannot confirm the code you have provided, please try again.'
+            }
+        },
+        async resend() {
+            try {
+                await Auth.resendSignUp(this.email)
+                this.resent = true
+            } catch (err) {
+                this.error = true
+                this.errorMessage =
+                    'We cannot resend the code at the moment, sorry for the inconvenience.'
             }
         }
     }

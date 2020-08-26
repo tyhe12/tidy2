@@ -9,8 +9,10 @@ import { mapActions } from 'vuex'
 export default {
     methods: {
         ...mapActions('user', ['signOut']),
+        ...mapActions('cleans', ['clear']),
         async logout() {
             await this.signOut()
+            this.clear()
         }
     }
 }

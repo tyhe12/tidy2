@@ -68,12 +68,12 @@ export default {
                 price: 120
             },
             {
-                title: 'Condo/House 1000-3000 Sq. ft',
+                title: 'Homes 1000-3000 Sq. ft',
                 price: 45,
                 hourly: true
             },
             {
-                title: 'Condo/House over 3000 Sq. ft',
+                title: 'Homes over 3000 Sq. ft',
                 price: 50,
                 hourly: true
             },
@@ -99,12 +99,17 @@ export default {
             },
             {
                 title: 'Move In/Out Clean',
-                price: 120,
+                price: 150,
                 subtitle: 'Prices vary with sizes'
             },
             {
                 title: 'Individual Room Clean',
-                price: 25,
+                price: 35,
+                subtitle: 'Prices vary with sizes'
+            },
+            {
+                title: 'Beauty/Barber Shops',
+                price: 45,
                 subtitle: 'Prices vary with sizes'
             }
         ]

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 import NavigationBar from '~/components/NavigationBar.vue'
 import FooterBar from '~/components/FooterBar.vue'
 import NavigationDrawer from '~/components/NavigationDrawer.vue'
@@ -35,21 +35,10 @@ export default {
     computed: {
         ...mapGetters({
             user: 'user/user',
-            signedIn: 'user/signedIn',
-            first: 'globals/firstload'
+            signedIn: 'user/signedIn'
         })
     },
-    mounted() {
-        if (this.first) {
-            if (!this.signedIn) {
-                this.loadUser()
-            }
-            this.firstload()
-        }
-    },
     methods: {
-        ...mapActions('user', ['loadUser']),
-        ...mapActions('globals', ['firstload']),
         clickIconHandler() {
             this.drawer = !this.drawer
         }
