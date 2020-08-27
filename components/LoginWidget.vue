@@ -81,7 +81,6 @@ export default {
                 })
                 this.$router.push('/')
             } catch (err) {
-                // return error message
                 this.error = true
                 if (
                     [

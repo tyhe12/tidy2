@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import LoginWidget from '~/components/LoginWidget'
 import LogoutWidget from '~/components/LogoutWidget'
 import SocialLogin from '~/components/SocialLogin'
@@ -64,6 +64,15 @@ export default {
         ...mapGetters({
             signedIn: 'user/signedIn'
         })
+    },
+    async mounted() {
+        if (!this.signedIn) {
+            await this.loadUser()
+            this.$router.push('/')
+        }
+    },
+    methods: {
+        ...mapActions('user', ['loadUser'])
     }
 }
 </script>

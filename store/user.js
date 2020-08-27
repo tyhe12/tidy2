@@ -35,7 +35,6 @@ export const actions = {
                     Authorization: token
                 }
             })
-            // console.log(data)
             const { address } = data.body.customer
             commit('setUser', { email, name, id, address })
             commit('setToken', token)
@@ -57,7 +56,6 @@ export const actions = {
                 Authorization: token
             }
         })
-        // console.log(data)
         const { address } = data.body.customer
         commit('setUser', { email, name, id, address })
         commit('setToken', token)

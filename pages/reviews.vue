@@ -13,7 +13,11 @@
             </v-col>
 
             <v-col v-for="(review, index) in reviews" :key="index" cols="12">
-                <review-card :rating="review.rating" :title="review.title">
+                <review-card
+                    :rating="review.rating"
+                    :title="review.title"
+                    :date="review.date"
+                >
                     {{ review.review }}
                 </review-card>
             </v-col>

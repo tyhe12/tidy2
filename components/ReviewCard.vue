@@ -5,7 +5,7 @@
                 <v-flex xs12 sm6>
                     <h3 class="title mb-0">{{ title }}</h3>
                     <h4 class="caption font-weight-light">
-                        {{ date.toLocaleDateString() }}
+                        {{ formattedDate }}
                     </h4>
                 </v-flex>
                 <v-flex xs12 sm6>
@@ -42,8 +42,13 @@ export default {
             default: ''
         },
         date: {
-            type: Date,
+            type: String,
             default: () => new Date()
+        }
+    },
+    computed: {
+        formattedDate() {
+            return new Date(this.date).toLocaleDateString()
         }
     }
 }
