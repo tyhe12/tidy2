@@ -93,32 +93,6 @@
             </v-container>
         </section>
 
-        <!-- <section class="section--big">
-            <v-layout class="py-8" align-center justify-center row wrap>
-                <v-flex xs12 md6 order-md2>
-                    <div
-                        class="headline font-weight-bold headline-text text-center"
-                    >
-                        Referral Incentives
-                    </div>
-                    <p class="text-center subheading" color="pink lighten-3">
-                        Get 20% off your next clean and get your friend 20% off.
-                    </p>
-                    <p class="text-center subheading" color="pink lighten-3">
-                        Get a free clean when you refer 3 friends.
-                    </p>
-                    <p class="text-center subheading" color="pink lighten-3">
-                        *Contact for more details.
-                    </p>
-                </v-flex>
-                <v-flex xs12 md6 d-flex align-center justify-center>
-                    <v-avatar :size="imgSize">
-                        <img :src="livingRoomImg" alt="Living room avatar" />
-                    </v-avatar>
-                </v-flex>
-            </v-layout>
-        </section> -->
-
         <section class="section--big">
             <v-container>
                 <v-row align="stretch">
@@ -231,6 +205,23 @@
                 >
             </v-row>
         </section>
+
+        <v-banner
+            v-model="alert"
+            dark
+            color="primary"
+            class="home-banner"
+            elevation="6"
+            transition="slide-y-transition"
+        >
+            <router-link class="home-banner--link" to="covid19">
+                Please checkout our safety measures for Covid-19 here
+            </router-link>
+
+            <template v-slot:actions="{ dismiss }">
+                <v-btn @click="dismiss" text color="">Dismiss</v-btn>
+            </template>
+        </v-banner>
     </div>
 </template>
 
@@ -252,6 +243,7 @@ export default {
     },
     data() {
         return {
+            alert: true,
             windowSize: {
                 x: 0,
                 y: 0
@@ -395,5 +387,16 @@ export default {
 
 .list-text {
     width: 100%;
+}
+
+.home-banner {
+    width: 100% !important;
+    position: fixed !important;
+    bottom: 0px !important;
+    z-index: 100;
+}
+
+.home-banner--link {
+    color: white !important;
 }
 </style>
