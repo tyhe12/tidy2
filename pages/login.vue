@@ -67,8 +67,10 @@ export default {
     },
     async mounted() {
         if (!this.signedIn) {
-            await this.loadUser()
-            this.$router.push('/')
+            const user = await this.loadUser()
+            if (user) {
+                this.$router.push('/')
+            }
         }
     },
     methods: {

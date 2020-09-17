@@ -15,7 +15,7 @@
                             v-model="name"
                             :error-messages="errors"
                             type="text"
-                            label="Your Name"
+                            label="Full Name"
                             hint="Please enter your name"
                             required
                         ></v-text-field>
@@ -32,6 +32,21 @@
                             type="email"
                             label="E-mail"
                             hint="Please enter a valid e-mail"
+                            required
+                        ></v-text-field>
+                    </validation-provider>
+
+                    <validation-provider
+                        v-slot="{ errors }"
+                        name="Address"
+                        rules="required"
+                    >
+                        <v-text-field
+                            v-model="address"
+                            :error-messages="errors"
+                            type="text"
+                            label="Address"
+                            hint="Please enter your address"
                             required
                         ></v-text-field>
                     </validation-provider>
@@ -137,7 +152,7 @@
             </validation-observer>
             <v-snackbar
                 v-model="resent"
-                timeout="5000"
+                :timeout="5000"
                 bottom
                 color="primary"
                 class="title"
@@ -167,6 +182,7 @@ export default {
         password: '',
         passwordCopy: '',
         code: '',
+        address: '',
         terms: false,
         signedup: false,
         confirmed: false,
@@ -176,13 +192,15 @@ export default {
         resent: false
     }),
     methods: {
-        ...mapActions('user', ['signIn', 'signUp']),
+        ...mapActions('user', ['signIn', 'signUp', 'confirmUser']),
         async signup() {
             this.error = false
             try {
                 this.user = await this.signUp({
                     username: this.email,
-                    password: this.password
+                    password: this.password,
+                    name: this.name,
+                    address: this.address
                 })
                 this.signedup = true
             } catch (err) {
@@ -194,11 +212,12 @@ export default {
         async confirm() {
             this.error = false
             try {
-                await Auth.confirmSignUp(this.email, this.code)
-                await this.signIn({
-                    email: this.email,
+                const result = await this.confirmUser({
+                    username: this.email,
+                    code: this.code,
                     password: this.password
                 })
+                if (!result) return
                 this.$router.push('/')
             } catch (err) {
                 this.error = true

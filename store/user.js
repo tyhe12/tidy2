@@ -45,7 +45,10 @@ export const actions = {
         }
     },
     async signIn({ commit }, { email, password }) {
-        const user = await Auth.signIn(email, password)
+        const user = await Auth.signIn({
+            username: email,
+            password
+        })
         const { username: id } = user
         const { name } = user.attributes
         const { jwtToken: token } = user.signInUserSession.idToken
@@ -67,32 +70,46 @@ export const actions = {
         commit('setToken', '')
         commit('setSignedIn', false)
     },
-    async signUp({ commit }, { email, password, name, address }) {
+    async signUp({ commit }, { username, password, name, address }) {
         try {
-            const user = await Auth.signUp({
-                username: this.email,
-                password: this.password,
+            const { userSub: id } = await Auth.signUp({
+                username,
+                password,
                 attributes: {
-                    email: this.email,
-                    name: this.name
+                    email: username,
+                    name
                 }
             })
-            const { username: id } = user
-            const { jwtToken: token } = user.signInUserSession.idToken
+
             await axios({
                 method: 'post',
                 url: `${process.env.usersUrl}`,
-                headers: {
-                    Authorization: token
-                },
                 data: {
-                    email,
+                    email: username,
                     name,
                     id,
-                    password
+                    password,
+                    address
                 }
             })
-            return user
+            commit('setUser', { email: username, name, id, address })
+            // commit('setToken', token)
+            return { email: username, name, id, address }
+        } catch (err) {
+            throw err
+        }
+    },
+    async confirmUser({ commit, state }, { username, code, password }) {
+        try {
+            await Auth.confirmSignUp(username, code)
+            const user = await Auth.signIn({
+                username: state.user.email,
+                password
+            })
+            const { jwtToken: token } = user.signInUserSession.idToken
+            commit('setToken', token)
+            commit('setSignedIn', true)
+            return true
         } catch (err) {
             throw err
         }
