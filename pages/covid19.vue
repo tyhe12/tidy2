@@ -3,7 +3,7 @@
         <h2
             class="display-1 font-weight-light text-center text-uppercase mb-10"
         >
-            Covid-19 Statements
+            Covid-19 Statement
         </h2>
 
         <p>

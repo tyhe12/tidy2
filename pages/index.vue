@@ -215,7 +215,7 @@
             transition="slide-y-transition"
         >
             <router-link class="home-banner--link" to="covid19">
-                Please checkout our safety measures for Covid-19 here
+                Please review our safety measures for Covid-19 here
             </router-link>
 
             <template v-slot:actions="{ dismiss }">
