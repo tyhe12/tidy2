@@ -197,7 +197,7 @@
                     >Check Out Our Services</v-btn
                 >
                 <v-btn
-                    href="mailto:info@cleaningwithcooley.com"
+                    href="sms:7082612306"
                     large
                     class="ma-8 px-8"
                     color="primary"

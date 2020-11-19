@@ -77,6 +77,12 @@ export default {
             show: this.drawer,
             items: [
                 {
+                    title: 'Home',
+                    icon: 'fas fa-home',
+                    link: '/',
+                    label: 'Home'
+                },
+                {
                     title: 'About',
                     icon: 'fas fa-user',
                     link: '/about',
