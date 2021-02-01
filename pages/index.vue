@@ -22,6 +22,21 @@
         </section>
 
         <section class="section--big">
+            <v-row class="d-flex justify-center py-8">
+                <v-btn to="/services" large class="ma-8 px-8" color="primary"
+                    >Check Out Our Services</v-btn
+                >
+                <v-btn
+                    href="sms:7082612306"
+                    large
+                    class="ma-8 px-8"
+                    color="primary"
+                    >Contact Us Today</v-btn
+                >
+            </v-row>
+        </section>
+
+        <section class="section--big">
             <v-container>
                 <v-row align="stretch">
                     <v-col

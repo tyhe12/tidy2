@@ -32,6 +32,7 @@
                             md6
                         >
                             <pricing-card
+                                :hidePrice="hidePrice"
                                 :title="item.title"
                                 :price="item.price"
                                 :subtitle="item.subtitle"
@@ -143,6 +144,7 @@ export default {
         ]
         return {
             active: null,
+            hidePrice: true,
             tabs: [
                 {
                     name: 'Services',

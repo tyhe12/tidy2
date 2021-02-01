@@ -18,7 +18,7 @@
             <v-spacer />
             <v-divider light></v-divider>
 
-            <v-card-actions class="pricing-section body-2">
+            <v-card-actions v-if="!hidePrice" class="pricing-section body-2">
                 <div class="estimate">
                     {{ hourly ? 'Hourly Rate' : 'Estimate' }}
                 </div>
@@ -47,6 +47,10 @@ export default {
             default: ''
         },
         hourly: {
+            type: Boolean,
+            default: false
+        },
+        hidePrice: {
             type: Boolean,
             default: false
         }
