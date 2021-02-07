@@ -100,12 +100,12 @@ export default {
                     link: '/included',
                     label: 'More about what is included in our services'
                 },
-                {
-                    title: 'What People Say',
-                    icon: 'fas fa-comments',
-                    link: '/reviews',
-                    label: 'More about reviews'
-                },
+                // {
+                //     title: 'What People Say',
+                //     icon: 'fas fa-comments',
+                //     link: '/reviews',
+                //     label: 'More about reviews'
+                // },
                 {
                     title: 'FAQs',
                     icon: 'fas fa-question-circle',

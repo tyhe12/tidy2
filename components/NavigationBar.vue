@@ -166,10 +166,10 @@ export default {
                 title: 'What is Included',
                 link: '/included'
             },
-            {
-                title: 'What People Say',
-                link: '/reviews'
-            },
+            // {
+            //     title: 'What People Say',
+            //     link: '/reviews'
+            // },
             {
                 title: 'FAQs',
                 link: '/faqs'
